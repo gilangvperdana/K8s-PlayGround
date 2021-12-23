@@ -1,5 +1,10 @@
 ## Kompose
 
+
+```
+Kompose is just a tool for convert a docker-compose to K8s YAML file.
+```
+
 ```
 Source : https://kompose.io/installation/
 GitHub : https://github.com/kubernetes/kompose/releases/
