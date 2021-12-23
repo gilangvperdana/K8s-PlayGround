@@ -1,5 +1,6 @@
 ## Kubernetes YAML Template
 
 ```
-Will be updated soon
+just to documentation the results of my learning.
+Will be updated soon.
 ```
