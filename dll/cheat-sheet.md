@@ -12,8 +12,7 @@ kubectl get nodes --show-labels
 kubectl get pods --all-namespace
 kubectl describe node NAMANODES
 
-
-INSTALASI AWAL:
+PRINT ULANG TOKEN JOIN AWAL:
 setelah node dan master terinstalasi kubernetes, lakukan ini pada master:
 kubeadm init
 kubeadm token create --print-join-command (paste sytanx token pada node yang akan dikirimkan)
