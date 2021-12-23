@@ -52,7 +52,7 @@ $ sudo mkdir -p /etc/containerd
 $ sudo su -
 $ containerd config default > /etc/containerd/config.toml
 
-LALU UBAH PADA KUBEADM_FLAGS:
+Change on KUBEADM_FLAGS:
 $ nano /var/lib/kubelet/kubeadm-flags.env
 --container-runtime=remote --container-runtime-endpoint=/run/containerd/containerd.sock
 
