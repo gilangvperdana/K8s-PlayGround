@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mongo 
+  name: mongo-nodeport-svc #your service name
+spec:
+  ports:
+  - port: 27017 #your port access
+    protocol: TCP
+    targetPort: 27017 #your container port running
+    nodePort: 30000 #your nodeport
+  selector:
+    app: mongo #selector your app
+  type: NodePort
+
