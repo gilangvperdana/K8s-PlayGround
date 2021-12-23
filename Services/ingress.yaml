@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: gbesar.com #your Endpoint
+      http:
+        paths:
+          - path: /?(.*) #your path Endpoint
+            pathType: Prefix
+            backend:
+              service:
+                name: apache #your App Labels/Selector
+                port:
+                  number: 80 #your App port Running
