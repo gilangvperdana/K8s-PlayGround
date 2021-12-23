@@ -126,3 +126,42 @@ systemctl restart kubelet
 MEMBERIKAN ROLE:
 kubectl label nodes NAMANODE node-role.kubernetes.io/worker=worker
 ```
+
+## Downgrade :
+```
+$ sudo apt-get install -qy kubelet=1.21.0-00 kubectl=1.21.0-00 kubeadm=1.21.0-00 --allow-downgrades --allow-change-held-packages
+Change 1.21.0-00 according to the version you want.
+```
+
+## Healtz Error :
+```
+EKSEKUSI DI  SEMUA NODE:
+$ cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+
+$ sudo systemctl enable docker
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+
+SETELAH ITU INIT ULANG DI MASTER:
+$ sudo kubeadm reset && sudo kubeadm init --pod-network-cidr=10.244.XX.0/16
+```
+
+## Unhealthy ?
+```
+$ kubectl get cs
+See your health is unhealthy ? do it:
+
+Clear the line (spec->containers->command) containing this phrase: - --port=0
+$ sudo nano /etc/kubernetes/manifests/kube-scheduler.yaml
+$ sudo nano /etc/kubernetes/manifests/kube-controller-manager.yaml
+$ sudo systemctl restart kubelet.service
+```
