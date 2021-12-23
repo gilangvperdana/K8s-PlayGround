@@ -17,10 +17,9 @@ $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linu
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 $ sudo usermod -aG docker $USER && newgrp docker
 
-Instalasi Kubectl :
+Installation Kubectl :
 $curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 $ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-
 
 $ cd /home/<user>
 $ minikube start --driver=docker
