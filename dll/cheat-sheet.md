@@ -6,7 +6,7 @@ Indonesian-English CheatSheet
 
 ## Syntax
 ```
-Melihat NODE
+Melihat NODE :
 kubectl get nodes
 kubectl get nodes --show-labels
 kubectl get pods --all-namespace
@@ -119,6 +119,7 @@ Linux - "/etc/hosts"
 MENAMBAHKAN LABEL PADA NODE:
 kubectl label nodes <node-name> <label-key>=<label-value>
 
+Problem :
 The connection to the server 10.148.0.5:6443 was refused - did you specify the right host or port?
 systemctl restart kubelet
 
