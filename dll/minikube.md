@@ -30,6 +30,12 @@ $ sudo kubectl get nodes
 Happy Orchestrating.
 ```
 
+## Dashboard :
+```
+$ minikube dashboard
+Access the URL below
+```
+
 ## Important Addons :
 ```
 Ingress on Minikube :
