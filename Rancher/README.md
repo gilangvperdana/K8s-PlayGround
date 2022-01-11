@@ -63,7 +63,11 @@ $ kubectl exec -it rancher_webhook_pod_name -n cattle-system reset-password
 
 ## Mini Testing LAB :
 ```
-You can testing a Rancher Dashboard with HelloWorld.yaml.
+You can testing a Rancher Dashboard with Try to deploy HelloWorld.yaml.
+
+with Selector:
+Key : app || Value : hello-world
+
 Try to deploy with Ingress :
 1. Make a Cluster IP from Rancher
 2. Make a Ingress from Rancher
