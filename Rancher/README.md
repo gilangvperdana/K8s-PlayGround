@@ -61,6 +61,17 @@ $ kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='
 $ kubectl exec -it rancher_webhook_pod_name -n cattle-system reset-password
 ```
 
+## Mini Testing LAB :
+```
+You can testing a Rancher Dashboard with HelloWorld.yaml.
+Try to deploy with Ingress :
+1. Make a Cluster IP from Rancher
+2. Make a Ingress from Rancher
+3. Access It!
+
+#Happy Exploring!
+```
+
 ## Source
 ```
 https://rancher.com/docs/rancher/v2.5/en/installation/install-rancher-on-k8s/
