@@ -15,6 +15,8 @@ $ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 
 Test Load :
 $ kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+
+CTRL+C if you done to test a load.
 ```
 
 ## Monitor :
