@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world
-  namespace: default
 spec:
   replicas: 2
   selector:
@@ -17,6 +16,9 @@ spec:
         - name: hello-world
           image: bashofmann/rancher-demo:1.0.0
           imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 200m
           ports:
           - containerPort: 8080
             name: web
