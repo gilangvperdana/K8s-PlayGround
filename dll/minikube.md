@@ -18,12 +18,12 @@ $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 $ sudo usermod -aG docker $USER && newgrp docker
 
 Installation Kubectl :
-$curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 $ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 $ cd /home/<user>
 $ minikube start --driver=docker
-$ sudo cp -r .kube/ .minikube. /root/
+$ sudo cp -r .kube/ .minikube/ /root/
 $ sudo kubectl get nodes -o wide 
 
 $ sudo kubectl get nodes
@@ -41,6 +41,11 @@ Access the URL below
 Ingress on Minikube :
 $ minikube addons enable ingress
 $ minikube tunnel
+```
+
+```
+Enable Metrics:
+$ minikube addons enable metrics-server 
 ```
 
 ```
