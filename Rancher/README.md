@@ -40,7 +40,7 @@ Install Rancher with Rancher-Generated Certificates :
 $ helm install rancher rancher-stable/rancher \
   --namespace cattle-system \
   --set hostname=rancher.my.org \
-  --set replicas=3
+  --set replicas=1
 
 Check Rancer :
 $ kubectl -n cattle-system rollout status deploy/rancher
@@ -59,6 +59,16 @@ $ kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='
 ## Reset Password :
 ```
 $ kubectl exec -it rancher_webhook_pod_name -n cattle-system reset-password
+```
+
+## Uninstall Rancher :
+```
+$ helm delete rancher -n cattle-system
+
+$ wget https://github.com/rancher/system-tools/releases/download/v0.1.1-rc7/system-tools_linux-amd64
+$ mv system-tools
+$ chmod +x system-tools
+$ ./system-tools remove --kubeconfig /root/.kube/config --namespace cattle-system
 ```
 
 ## Mini Testing LAB :
