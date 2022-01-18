@@ -21,10 +21,14 @@ $ touch config
 ---
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: "192.168.80.12"
 nodes:
 - role: control-plane
 - role: worker
 ---
+
+192.168.80.12 is your ip pool address.
 $ kind create cluster --name k8s --config config #adjust the name "k8s" to yours.
 ```
 
