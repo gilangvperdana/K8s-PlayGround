@@ -32,6 +32,12 @@ $ sudo mv ./kubectl /usr/local/bin
 $ kubectl get nodes -o wide
 ```
 
+## Delete Cluster :
+```
+$ kind get clusters
+$ kind delete cluster --name k8s #k8s is your name of your cluster.
+```
+
 ## Source :
 ```
 https://kind.sigs.k8s.io/
