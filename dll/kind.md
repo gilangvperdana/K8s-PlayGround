@@ -47,6 +47,16 @@ Check IP Pool :
 $ docker network inspect bridge
 Default is : 172.17.0.0/16
 
+StrictARP True :
+$ kubectl edit configmap -n kube-system kube-proxy
+---
+apiVersion: kubeproxy.config.k8s.io/v1alpha1
+kind: KubeProxyConfiguration
+mode: "ipvs"
+ipvs:
+  strictARP: true
+---
+
 $ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
 $ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
 
