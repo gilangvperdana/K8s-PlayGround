@@ -28,7 +28,12 @@ $ kubectl krew
 ## Installation :
 ```
 $ kubectl krew install ctx
+$ su
+$ kubectl ctx
+
 $ kubectl krew install ns
+$ su
+$ kubectl ns
 ```
 
 ## Source :
