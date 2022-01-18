@@ -16,7 +16,11 @@ $ (
   ./"${KREW}" install krew
 )
 
-$ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+$ nano /root/.bashrc
+---
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+---
+
 $ su
 $ kubectl krew
 ```
