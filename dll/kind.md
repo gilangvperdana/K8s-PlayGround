@@ -41,6 +41,33 @@ $ sudo mv ./kubectl /usr/local/bin
 $ kubectl get nodes -o wide
 ```
 
+## MetalLB Kind :
+```
+Check IP Pool :
+$ docker network inspect bridge
+Default is : 172.17.0.0/16
+
+$ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
+
+$ nano configmap.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 172.17.255.1-172.17.255.250  
+---
+$ kubectl apply -f configmap.yaml
+```
+
 ## Delete Cluster :
 ```
 $ kind get clusters
