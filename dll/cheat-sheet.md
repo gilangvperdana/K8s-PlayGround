@@ -59,6 +59,9 @@ kubectl get service
 kubectl delete svc NAMASERVICE
 kubectl describe svc NAMASERVICE
 
+GANTI CLUSTER KUBECTL :
+kubectl config use-context <nama_cluster>
+
 DEPLOY APLIKASI DARI KUBERNETES:
 Membuat deployment dari Config YAML:
 buat file .yaml dengan konfigurasi umum deployment kubernetes.
