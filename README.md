@@ -1,4 +1,4 @@
-## Kubernetes YAML Template
+## Kubernetes YAML Template (Ubuntu Version)
 
 ```
 just to documentation the results of my learning.
