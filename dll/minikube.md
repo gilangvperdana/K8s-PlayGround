@@ -22,7 +22,7 @@ $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/sta
 $ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 $ cd /home/<user>
-$ minikube start --driver=docker
+$ minikube start --kubernetes-version=v1.23.0
 $ sudo cp -r .kube/ .minikube/ /root/
 $ sudo kubectl get nodes -o wide 
 
