@@ -5,7 +5,7 @@ From datacenter to cloud to edge, Rancher lets you deliver Kubernetes-as-a-Servi
 
 ```
 Environment :
-1. Kubernetes Cluster
+1. Kubernetes Cluster v1.22.0
 2. Helm
 ```
 
