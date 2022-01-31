@@ -81,6 +81,12 @@ $ bash -c "$(curl -fsSL https://withpixie.ai/install.sh)"
 https://docs.px.dev/installing-pixie/install-schemes/cli/
 ```
 
+## Non Self-Hosted Version
+```
+If you want to deploy non self-hosted version, you can go to :
+https://docs.px.dev/installing-pixie/install-guides/community-cloud-for-pixie
+```
+
 ## Source
 ```
 https://github.com/pixie-io/pixie
