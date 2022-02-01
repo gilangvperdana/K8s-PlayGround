@@ -38,6 +38,12 @@ data:
 $ kubectl apply -f confmap.yaml -n metallb-system
 ```
 
+## Error
+```
+If you get a message error on Metallb_Speaker POD like "secret 'memberlist' not found" you can try :
+$ kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+```
+
 ## Source :
 ```
 https://metallb.universe.tf/installation/
