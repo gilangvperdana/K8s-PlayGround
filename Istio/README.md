@@ -27,7 +27,7 @@ $ kubectl apply -f https://gitlab.com/gilangvperdana/microservices-app-on-k-8-s-
 Install Grafana (Optional) :
 $ kubectl apply -f https://gitlab.com/gilangvperdana/microservices-app-on-k-8-s-with-istio/-/raw/master/addons/grafana.yaml 
 
-Change Service Graana to LoadBalancer:
+Change Service Grafana to LoadBalancer:
 $ kubectl edit svc grafana -n istio-system
 $ http://<ip-external-service-grafana>:3000
 ```
