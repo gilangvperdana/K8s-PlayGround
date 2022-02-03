@@ -78,3 +78,9 @@ $ su
 $ linkerd buoyant install | kubectl apply -f - 
 $ linkerd buoyant dashboard &
 ```
+
+## Source
+```
+https://linkerd.io/2.11/getting-started/
+https://linkerd.io/2.9/tasks/using-ingress/
+```
