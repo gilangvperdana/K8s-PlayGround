@@ -46,6 +46,9 @@ After Kiali was Deployed, Inject sidecard to all running pod :
 $ kubectl label namespace postsapp istio-injection=enabled --overwrite
 $ kubectl get namespace -L istio-injection
 
+To remove injection :
+$ kubectl label namespace postsapp istio-injection=disabled --overwrite 
+
 Monitoring on Kiali Dashboard :
 http://ip_external_kiali:20001
 ```
