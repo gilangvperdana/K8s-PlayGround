@@ -62,6 +62,18 @@ spec:
 Access on emojivoto.com
 ```
 
+## Linkerd Injection
+```
+Inject all the deployments in the default namespace.
+$ kubectl get deploy -o yaml | linkerd inject - | kubectl apply -f -
+
+Injecting a file from a remote URL
+$ linkerd inject http://url.to/yml | kubectl apply -f -
+
+Inject all the resources inside a folder and its sub-folders.
+$ linkerd inject <folder> | kubectl apply -f -
+```
+
 ## Linkerd Dashboard
 ```
 VIZ Dashboard
@@ -83,4 +95,5 @@ $ linkerd buoyant dashboard &
 ```
 https://linkerd.io/2.11/getting-started/
 https://linkerd.io/2.9/tasks/using-ingress/
+https://linkerd.io/2.10/reference/cli/inject/
 ```
