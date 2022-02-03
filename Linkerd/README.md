@@ -38,6 +38,7 @@ http://clusterip_web-svc
 
 ## Access with Nginx Ingress
 ```
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -51,12 +52,14 @@ metadata:
 
 spec:
   rules:
-  - host: example.com
+  - host: emojivoto.com
     http:
       paths:
       - backend:
           serviceName: web-svc
           servicePort: 80
+---
+Access on emojivoto.com
 ```
 
 ## Linkerd Dashboard
