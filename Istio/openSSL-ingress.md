@@ -6,9 +6,10 @@ SELF SIGNED VERSION
 ```
 $ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -subj '/O=example Inc./CN=example.com' -keyout example.com.key -out example.com.crt
 
-OR
-$ openssl req -out example.com.csr -newkey rsa:2048 -nodes -keyout example.com.key -subj "/CN=example.com/O=example organization"
-$ openssl x509 -req -days 365 -CA example.com.crt -CAkey example.com.key -set_serial 0 -in example.com.csr -out example.com.crt
+OR for subdomain :
+$ openssl req -out sub.example.com.csr -newkey rsa:2048 -nodes -keyout sub.example.com.key -subj "/CN=sub.example.com/O=sub organization"
+$ openssl x509 -req -days 365 -CA example.com.crt -CAkey example.com.key -set_serial 0 -in sub.example.com.csr -out sub.example.com.crt
+
 
 THEN,
 $ kubectl create -n istio-system secret tls example-credential --key=example.com.key --cert=example.com.crt
