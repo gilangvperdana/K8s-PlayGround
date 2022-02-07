@@ -91,6 +91,14 @@ $ linkerd buoyant install | kubectl apply -f -
 $ linkerd buoyant dashboard &
 ```
 
+## Uninstall
+```
+linkerd viz uninstall | kubectl delete -f -
+linkerd buoyant uninstall | kubectl delete -f - 
+linkerd uninstall | kubectl delete -f -
+```
+
+
 ## Source
 ```
 https://linkerd.io/2.11/getting-started/
