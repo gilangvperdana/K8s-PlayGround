@@ -69,6 +69,17 @@ $ wget https://github.com/rancher/system-tools/releases/download/v0.1.1-rc7/syst
 $ mv system-tools
 $ chmod +x system-tools
 $ ./system-tools remove --kubeconfig /root/.kube/config --namespace cattle-system
+
+If cattle-system namespaces cant to delete, do :
+$ kubectl edit namespace cattle-system
+
+Delete :
+---
+finalizer:
+  controller.cattle.io/namespace-auth
+---
+
+then, save.
 ```
 
 ## Mini Testing LAB :
