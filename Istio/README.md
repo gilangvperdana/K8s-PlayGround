@@ -56,6 +56,7 @@ http://ip_external_kiali:20001
 ## Strict your Pod Connection
 
 ```
+To all injected sidecar pod :
 $ kubectl apply -n istio-system -f - <<EOF
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
@@ -65,6 +66,23 @@ spec:
   mtls:
     mode: STRICT
 EOF
+```
 
+```
+Specify namespace :
+$ kubectl apply -n your_namespace -f - <<EOF
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: "default"
+spec:
+  mtls:
+    mode: STRICT
+EOF
+
+```
+
+```
+Check :
 $ kubectl get peerauthentication --all-namespaces
 ```
