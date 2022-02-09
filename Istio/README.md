@@ -54,8 +54,9 @@ http://ip_external_kiali:20001
 ```
 
 ## Strict your Pod Connection
+
 ```
-$ kubectl apply -n postsapp -f - <<EOF
+$ kubectl apply -n istio-system -f - <<EOF
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
 metadata:
