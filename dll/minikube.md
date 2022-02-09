@@ -26,6 +26,12 @@ $ minikube start --kubernetes-version=v1.23.0
 $ sudo cp -r .kube/ .minikube/ /root/
 $ sudo kubectl get nodes -o wide 
 
+with Specify Memory, CPU, Disk, K8s Version :
+$ minikube stop
+$ minikube config set memory 8192
+$ minikube config set cpus 4
+$ minikube start --disk-size 300000 --kubernetes-version=v1.21.9
+
 $ sudo kubectl get nodes
 Happy Orchestrating.
 ```
