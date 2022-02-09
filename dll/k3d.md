@@ -40,6 +40,9 @@ kubectl version
 
 Install k3d :
 curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+
+or Specific Version :
+curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | TAG=v5.0.0 bash
 ```
 
 ## Cluster
