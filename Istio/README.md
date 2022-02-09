@@ -52,3 +52,16 @@ $ kubectl label namespace postsapp istio-injection=disabled --overwrite
 Monitoring on Kiali Dashboard :
 http://ip_external_kiali:20001
 ```
+
+## Strict your Pod Connection
+```
+kubectl apply -n postsapp -f - <<EOF
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: "default"
+spec:
+  mtls:
+    mode: STRICT
+EOF
+```
