@@ -36,6 +36,15 @@ $ sudo kubectl get nodes
 Happy Orchestrating.
 ```
 
+## Minikube Container :
+```
+To see Minikube Container
+```
+```
+$ eval $(minikube docker-env)
+$ docker ps
+```
+
 ## Dashboard :
 ```
 $ minikube dashboard
