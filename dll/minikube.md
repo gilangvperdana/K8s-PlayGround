@@ -34,6 +34,9 @@ $ minikube start --disk-size 300000 --kubernetes-version=v1.21.9
 
 $ sudo kubectl get nodes
 Happy Orchestrating.
+
+To check your cluster Minikube list :
+$ minikube profile list
 ```
 
 ## Minikube Container :
