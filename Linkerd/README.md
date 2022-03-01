@@ -74,6 +74,15 @@ Inject all the resources inside a folder and its sub-folders.
 $ linkerd inject <folder> | kubectl apply -f -
 ```
 
+```
+Inject with Annotations :
+---
+metadata:
+  annotations:
+    linkerd.io/inject: enabled
+---
+```
+
 ## Linkerd Dashboard
 ```
 VIZ Dashboard
