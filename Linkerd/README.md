@@ -102,6 +102,8 @@ $ linkerd buoyant dashboard &
 Jaeger Dashboard
 $ linkerd jaeger install | kubectl apply -f -
 $ linkerd jaeger dashboard
+To trace with Jaeger use this :
+$ kubectl -n <your_namespace> set env --all deploy OC_AGENT_HOST=collector.linkerd-jaeger:55678
 ```
 
 ## Uninstall
