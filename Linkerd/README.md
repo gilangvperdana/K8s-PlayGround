@@ -98,6 +98,10 @@ export PATH=$PATH:/root/.linkerd2/bin
 $ su
 $ linkerd buoyant install | kubectl apply -f - 
 $ linkerd buoyant dashboard &
+
+Jaeger Dashboard
+$ linkerd jaeger install | kubectl apply -f -
+$ linkerd jaeger dashboard
 ```
 
 ## Uninstall
