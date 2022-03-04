@@ -26,6 +26,9 @@ $ helm install consul hashicorp/consul --create-namespace --namespace consul --v
 
 ```
 $ kubectl label namespace your_namespace connect-inject=enabled
+
+Check :
+$ kubectl get ns --show-labels
 ```
 
 ## Dashboard
