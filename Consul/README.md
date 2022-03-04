@@ -29,6 +29,12 @@ $ kubectl label namespace your_namespace connect-inject=enabled
 
 Check :
 $ kubectl get ns --show-labels
+
+OR with annotations on deployment :
+---
+      annotations:
+        'consul.hashicorp.com/connect-inject': 'true'
+---
 ```
 
 ## Dashboard
