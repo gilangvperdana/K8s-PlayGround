@@ -1,5 +1,11 @@
 global:
   name: consul
+server:
+  replicas: 1
+ui:
+  enabled: true
+  service:
+    type: 'NodePort'
 connectInject:
   enabled: true
 controller:
