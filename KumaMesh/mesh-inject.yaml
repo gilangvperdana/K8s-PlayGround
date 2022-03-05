@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: postsapp #define your namespace name
+  namespace: postsapp #define your namespace name
+  labels:
+    kuma.io/sidecar-injection: enabled

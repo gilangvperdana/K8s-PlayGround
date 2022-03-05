@@ -15,6 +15,13 @@ kubectl get pod -n kuma-system
 kubectl get meshes
 ```
 
+## Dashboard
+
+```
+kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
+Access on 127.0.0.1:5681/gui
+```
+
 ## Source
 
 ```
