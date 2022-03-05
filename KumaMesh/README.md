@@ -82,6 +82,10 @@ kubectl apply -f mesh-inject.yaml -n your_namespace
 
 ## Kong Ingress
 ```
+If you use minikube, you can use this:
+kubectl create -f https://bit.ly/k4k8s
+
+If you use another cluster, you can use :
 HOST=$(kubectl get svc --namespace postsapp kong-1646489558-kong-proxy -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 PORT=$(kubectl get svc --namespace postsapp kong-1646489558-kong-proxy -o jsonpath='{.spec.ports[0].port}')
 export PROXY_IP=${HOST}:${PORT}
