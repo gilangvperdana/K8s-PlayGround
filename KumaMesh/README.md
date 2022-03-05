@@ -51,6 +51,8 @@ Access Grafana :
 kubectl port-forward svc/grafana -n kuma-metrics 3000:80
 
 Access : 127.0.0.1:3000
+Username : admin
+Password : admin
 ```
 
 ## Inject Kuma Mesh
