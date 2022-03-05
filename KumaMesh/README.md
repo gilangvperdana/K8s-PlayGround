@@ -55,6 +55,26 @@ Username : admin
 Password : admin
 ```
 
+```
+Allow metrics :
+
+echo "apiVersion: kuma.io/v1alpha1
+kind: Mesh
+metadata:
+  name: default
+spec:
+  mtls:
+    enabledBackend: ca-1
+    backends:
+    - name: ca-1
+      type: builtin
+  metrics:
+    enabledBackend: prometheus-1
+    backends:
+    - name: prometheus-1
+      type: prometheus" | kubectl apply -f -
+```
+
 ## Inject Kuma Mesh
 ```
 kubectl apply -f mesh-inject.yaml -n your_namespace
