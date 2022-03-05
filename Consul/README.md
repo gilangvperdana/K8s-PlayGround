@@ -11,7 +11,7 @@ Service mesh observability & monitoring tools.
 2. Helm
 ```
 
-## Installation
+## Installation Version 1
 
 ```
 $ helm repo add hashicorp https://helm.releases.hashicorp.com
@@ -20,6 +20,12 @@ $ helm install consul hashicorp/consul --set global.name=consul --create-namespa
 
 OR if you want to use another config on yaml, you can use this :
 $ helm install consul hashicorp/consul --create-namespace --namespace consul --values config.yaml
+```
+
+## Installation Version 2
+
+```
+$ helm install --values helm-consul-values.yaml consul hashicorp/consul --version "0.40.0"
 ```
 
 ## Inject Consul
@@ -56,4 +62,5 @@ $ kubectl get secrets/consul-bootstrap-acl-token --template='{{.data.token | bas
 
 ```
 https://www.consul.io/
+https://learn.hashicorp.com/tutorials/consul/kubernetes-minikube
 ```
