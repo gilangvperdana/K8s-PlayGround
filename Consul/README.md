@@ -11,6 +11,20 @@ Service mesh observability & monitoring tools.
 2. Helm
 ```
 
+## Consul CLI
+```
+Install Brew :
+$ mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+$ eval "$(homebrew/bin/brew shellenv)"
+$ brew update --force --quiet
+$ chmod -R go-w "$(brew --prefix)/share/zsh"
+
+Install Consul CLI :
+$ brew tap hashicorp/tap
+$ brew install hashicorp/tap/consul-k8s
+```
+
+
 ## Installation Version 1
 
 ```

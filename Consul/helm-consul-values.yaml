@@ -14,5 +14,7 @@ ui:
     type: 'NodePort'
 connectInject:
   enabled: true
+  transparentProxy:
+    defaultEnabled: false
 controller:
   enabled: true
