@@ -22,6 +22,11 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 Access on 127.0.0.1:5681/gui
 ```
 
+## Inject Kuma Mesh
+```
+kubectl apply -f mesh-inject.yaml -n your_namespace
+```
+
 ## Source
 
 ```
