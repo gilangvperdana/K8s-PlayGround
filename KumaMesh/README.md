@@ -80,6 +80,14 @@ spec:
 kubectl apply -f mesh-inject.yaml -n your_namespace
 ```
 
+## Kong Ingress
+```
+HOST=$(kubectl get svc --namespace postsapp kong-1646489558-kong-proxy -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+PORT=$(kubectl get svc --namespace postsapp kong-1646489558-kong-proxy -o jsonpath='{.spec.ports[0].port}')
+export PROXY_IP=${HOST}:${PORT}
+curl $PROXY_IP
+```
+
 ## Source
 
 ```
