@@ -28,6 +28,9 @@ helm install <mesh name> osm --repo https://openservicemesh.github.io/osm --vers
 ## Sidecar Injection
 
 ```
+# Enable sidecard with osm cli :
+$ osm namespace add <namespace>
+
 # Enable sidecar injection on a namespace :
 $ kubectl annotate namespace <namespace> openservicemesh.io/sidecar-injection=enabled
 
