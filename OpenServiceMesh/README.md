@@ -16,6 +16,9 @@ tar -xvzf osm-v1.0.0-linux-amd64.tar.gz
 cd linux-amd64
 sudo cp -r ./osm /usr/local/bin
 su
+osm install
+
+OR you can use :
 osm install --set=osm.deployPrometheus=true \
             --set=osm.deployGrafana=true \
             --set contour.enabled=true
