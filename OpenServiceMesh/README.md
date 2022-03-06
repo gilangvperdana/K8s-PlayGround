@@ -25,6 +25,25 @@ osm install
 helm install <mesh name> osm --repo https://openservicemesh.github.io/osm --version <chart version> --namespace <osm namespace> --values override.yaml
 ```
 
+## Sidecar Injection
+
+```
+# Enable sidecar injection on a namespace :
+$ kubectl annotate namespace <namespace> openservicemesh.io/sidecar-injection=enabled
+
+# Enable sidecar injection on a pod :
+$ kubectl annotate pod <pod> openservicemesh.io/sidecar-injection=enabled
+
+# Enable on deployment :
+metadata:
+  name: test
+  annotations:
+    'openservicemesh.io/sidecar-injection': 'enabled'
+
+Source :
+https://release-v1-0.docs.openservicemesh.io/docs/guides/app_onboarding/sidecar_injection/
+```
+
 ## Source
 
 ```
