@@ -16,7 +16,9 @@ tar -xvzf osm-v1.0.0-linux-amd64.tar.gz
 cd linux-amd64
 sudo cp -r ./osm /usr/local/bin
 su
-osm install
+osm install --set=osm.deployPrometheus=true \
+            --set=osm.deployGrafana=true \
+            --set contour.enabled=true
 ```
 
 ## Installation with Helm
@@ -45,6 +47,12 @@ metadata:
 
 Source :
 https://release-v1-0.docs.openservicemesh.io/docs/guides/app_onboarding/sidecar_injection/
+```
+
+## Ingress with Contour
+
+```
+osm install --set contour.enabled=true
 ```
 
 ## Source
