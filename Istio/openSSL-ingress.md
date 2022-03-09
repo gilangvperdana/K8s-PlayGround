@@ -12,7 +12,7 @@ $ openssl x509 -req -days 365 -CA example.com.crt -CAkey example.com.key -set_se
 
 
 THEN,
-$ kubectl create -n istio-system secret tls example-credential --key=example.com.key --cert=example.com.crt
+$ kubectl create -n istio-system secret tls post-credential --key=post.com.key --cert=post.com.crt
 
 Add line on IstioGateway.yaml:
 ---

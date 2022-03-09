@@ -38,11 +38,9 @@ helm repo add gilangvperdana https://githubio.gbesar.com/charts/
 helm repo update
 
 kubectl create ns istio-system
-helm install istio-base gilangvperdana/base
-helm install istiod gilangvperdana/istiod
-
-kubectl create ns istio-ingress
-helm install istio-ingress gilangvperdana/gateway -n istio-ingress
+helm install istio-base gilangvperdana/base -n istio-system
+helm install istiod gilangvperdana/istiod -n istio-system
+helm install istio-ingress gilangvperdana/gateway -n istio-system
 ```
 
 ## Monitoring with Kiali?
