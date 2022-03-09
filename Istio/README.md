@@ -24,6 +24,9 @@ $ kubectl get svc istio-ingressgateway -n istio-system
 Install Prometheus :
 $ kubectl apply -f https://gitlab.com/gilangvperdana/microservices-app-on-k-8-s-with-istio/-/raw/master/addons/prometheus.yaml
 
+Install Jaeger (Optional) :
+$ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.13/samples/addons/jaeger.yaml
+
 Install Grafana (Optional) :
 $ kubectl apply -f https://gitlab.com/gilangvperdana/microservices-app-on-k-8-s-with-istio/-/raw/master/addons/grafana.yaml 
 
@@ -53,6 +56,9 @@ You can specify label selector ingress with :
 
 ## Monitoring with Kiali?
 ```
+$ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.13/samples/addons/kiali.yaml
+
+OR for HardWay :
 $ curl -L https://istio.io/downloadIstio | sh -
 $ cd istio-1.12.1
 $ kubectl apply -f samples/addons/kiali.yaml
