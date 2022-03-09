@@ -32,8 +32,22 @@ $ kubectl edit svc grafana -n istio-system
 $ http://<ip-external-service-grafana>:3000
 ```
 
+## Installation with Helm
+```
+helm repo add gilangvperdana https://githubio.gbesar.com/charts/
+helm repo update
+
+kubectl create ns istio-system
+helm install istio-base gilangvperdana/base
+helm install istiod gilangvperdana/istiod
+
+kubectl create ns istio-ingress
+helm install istio-ingress gilangvperdana/gateway -n istio-ingress
+```
+
 ## Monitoring with Kiali?
 ```
+$ curl -L https://istio.io/downloadIstio | sh -
 $ cd istio-1.12.1
 $ kubectl apply -f samples/addons/kiali.yaml
 
