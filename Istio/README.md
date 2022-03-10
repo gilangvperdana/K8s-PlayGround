@@ -43,10 +43,11 @@ helm repo update
 kubectl create ns istio-system
 helm install istio-base gilangvperdana/base -n istio-system
 helm install istiod gilangvperdana/istiod -n istio-system
-kubectl label namespace istio-ingress istio-injection=enabled
-kubectl create ns istio-ingress
 
+kubectl create ns istio-ingress
+kubectl label namespace istio-ingress istio-injection=enabled
 helm install istio-ingress gilangvperdana/gateway -n istio-system
+
 You can specify label selector ingress with :
 ---
   selector:
