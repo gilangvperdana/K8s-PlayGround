@@ -70,6 +70,10 @@ $ minikube addons enable metrics-server
 Pull from Private Registry :
 $ minikube addons configure registry-creds
 $ minikube addons enable registry-creds
+
+OR 
+$ minikube ssh
+$ docker login
 ```
 
 ## PV :
