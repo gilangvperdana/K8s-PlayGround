@@ -18,6 +18,12 @@ helm install --create-namespace -n portainer portainer portainer/portainer \
   --set ingress.hosts[0].paths[0].path="/"
 ```
 
+## Access
+```
+http://portainer.example.io/
+Point to your Ingress Endpoint.
+```
+
 ## Source
 
 ```
