@@ -9,8 +9,10 @@ Portainer Community Edition (CE) is our foundation. With over half a million reg
 ```
 helm repo add portainer https://portainer.github.io/k8s/
 helm repo update
+```
 
-with Ingress :
+## Expose with Ingress
+```
 helm install --create-namespace -n portainer portainer portainer/portainer \
   --set service.type=ClusterIP \
   --set ingress.enabled=true \
@@ -18,13 +20,27 @@ helm install --create-namespace -n portainer portainer portainer/portainer \
   --set ingress.annotations."nginx\.ingress\.kubernetes\.io/backend-protocol"=HTTPS \
   --set ingress.hosts[0].host=portainer.example.io \
   --set ingress.hosts[0].paths[0].path="/"
+```
+```
+Access on portainer.example.io
+```
 
-with NodePort :
+## Expose with NodePort
+```
 helm install --create-namespace -n portainer portainer portainer/portainer
+```
+```
+Access on https://your_cluster_ip_public:30779
+```
 
-with LoadBalancer :
+## Expose with Load Balancer
+```
 helm install --create-namespace -n portainer portainer portainer/portainer \
     --set service.type=LoadBalancer
+```
+```
+Access on https://your_cluster_ip_public:9443 for HTTPS
+Access on https://your_cluster_ip_public:9000 for HTTP
 ```
 
 ## Access
