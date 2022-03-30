@@ -1,6 +1,10 @@
 ## Installing (Istio, Grafana) :
 ```
+Latest Ver : 
 $ curl -L https://istio.io/downloadIstio | sh -
+Specify Ver :
+$ curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.12.1 sh -
+
 $ cd istio-1.12.1
 $ export PATH=$PWD/bin:$PATH
 $ istioctl operator init  
