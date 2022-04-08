@@ -95,6 +95,18 @@ The default PV Path on inside container minikube is on :
 /tmp/hostpath-provisioner*
 ```
 
+## Wrong KubeDNS Resolver
+```
+Sometimes in one of the Linux distros or even the hypervisor can't read KubeDNS like in general on Minikube. This can be overcome by changing the resolv.conf on Minikube.
+```
+```
+$ minikube ssh
+$ echo "nameserver 8.8.8.8" > /etc/resolv.conf
+```
+```
+https://gist.github.com/superseb/f6894ddbf23af8e804ed3fe44dd48457
+```
+
 ## Monitoring with Lens :
 ```
 You can use Monitoring Tools like Lens [https://k8slens.dev/] with Connect under Tunnel (if you deploy on Linux VirtualBox).
