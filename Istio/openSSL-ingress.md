@@ -4,7 +4,7 @@
 SELF SIGNED VERSION
 ```
 ```
-$ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -subj '/O=example Inc./CN=example.com' -keyout example.com.key -out example.com.crt
+$ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -subj '/O=Labs Inc./CN=labs.com' -keyout labs.com.key -out labs.com.crt
 
 OR for subdomain :
 $ openssl req -out sub.example.com.csr -newkey rsa:2048 -nodes -keyout sub.example.com.key -subj "/CN=sub.example.com/O=sub organization"
@@ -12,7 +12,7 @@ $ openssl x509 -req -days 365 -CA example.com.crt -CAkey example.com.key -set_se
 
 
 THEN,
-$ kubectl create -n istio-system secret tls post-credential --key=post.com.key --cert=post.com.crt
+$ kubectl create -n istio-system secret tls post-credential --key=labs.com.key --cert=labs.com.crt
 
 Add line on IstioGateway.yaml:
 ---
@@ -67,4 +67,8 @@ EOF
 ```
 Testing :
 $ curl -k https://example.com
+
+OR
+
+$ curl --cacert my-ca.crt https://example.com
 ```
