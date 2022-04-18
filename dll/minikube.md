@@ -118,3 +118,8 @@ socks5://127.0.0.1:500
 
 And then copy paste the .kube/config file to Lens YAML. And then you can connect to your cluster and Happy Monitoring !
 ```
+
+## Expose to Private Network
+```
+https://gist.github.com/gilangvperdana/2912ced3f543f7dc7f909eebd103684e
+```
