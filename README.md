@@ -9,3 +9,49 @@ Will be updated soon.
 ```
 https://collabnix.github.io/kubetools/
 ```
+
+
+## List Document
+
+| Name |  Link | Description |
+|--|--|--|
+|ArgoCD  | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/ArgoCD) |  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.|
+|Consul|  [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Consul)|  Service mesh observability & monitoring tools.|
+|Helm |[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Helm)| Helm is the package manager for Kubernetes. |
+|Istio  | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Istio) | Service mesh observability & monitoring tools. |
+|Jaeger | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Jaeger) | Monitor and troubleshoot transactions in complex distributed systems. |
+|Kong Mesh | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/KongMesh) | Enterprise-grade service mesh for multi-cloud and multi-cluster on both Kubernetes and VMs. |
+|Kube Apps | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/KubeApps) | Kubeapps is a web-based UI for deploying and managing applications in Kubernetes clusters. |
+|Kuma Mesh| [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/KumaMesh) | The open-source control plane for service mesh, delivering security, observability, routing and more |
+|Linkerd | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Linkerd) | Linkerd is a service mesh for Kubernetes. It makes running services easier and safer by giving you runtime debugging, observability, reliability, and security—all without requiring any changes to your code. |
+|Meshery | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Meshery) | The extensible service mesh manager |
+|MongoDB | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/MongoDB) | NoSQL Database |
+|MySQL | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/MySQL) | SQL Database |
+|Nginx Ingress | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/NginxIngress) | Ingress may provide load balancing, SSL termination and name-based virtual hosting. |
+|Net Data | [Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/Observability/NetData.md) | Monitor your K8s Cluster with Awesome Dashboard |
+|Portainer | [Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/Observability/Portainer.md) | Portainer Community Edition (CE) is our foundation. With over half a million regular users, CE is a powerful, open source toolset that allows you to easily build and manage containers in Docker, Docker Swarm, Kubernetes and Azure ACI. |
+|Prometheus & Grafana  | [Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/Observability/PromGrafana.md)  | To monitoring your K8s Cluster |
+|Open Service Mesh  | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/OpenServiceMesh)   | Open Service Mesh (OSM) is a lightweight and extensible cloud native service mesh. |
+|Pixie | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Pixie) |Instant open-source debugging for your applications on Kubernetes.  |
+|Rancher | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Rancher) |From datacenter to cloud to edge, Rancher lets you deliver Kubernetes-as-a-Service.  |
+|Services YAML | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Services) | All about Service YAML Template on Kubernetes Cluster |
+|Skooner | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Skooner)| A Kubernetes Dashboard that helps you understand & manage your cluster.|
+|Wordpress |[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Wordpress-MySQL-PMA-nonPV) |Simply deploy Wordpress on Kubernetes Cluster. |
+|Kubectx & Kubens|[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/kubectx-kubens) |Kubectx is a tool to switch between contexts (clusters) on kubectl faster. Kubens is a tool to switch between Kubernetes namespaces (and configure them for kubectl) easily. |
+|Metallb |[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/metallb) |MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols. |
+|CNI |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/CNI.md) | Kubernetes uses the Container Network Interface (CNI) to interact with networking providers like Calico, Flannel, Canal.|
+|KubeDNS| [Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/KubeDNS.md) | The Domain Name System (DNS) is a system for associating various types of information – such as IP addresses – with easy-to-remember names. By default most Kubernetes clusters automatically configure an internal DNS service to provide a lightweight mechanism for service discovery. Built-in service discovery makes it easier for applications to find and communicate with each other on Kubernetes clusters, even when pods and services are being created, deleted, and shifted between nodes.|
+|Cheat Sheet |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/cheat-sheet.md) | Indonesian-English CheatSheet.|
+|Image Clean Up |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/image-cleanup.md) |Clean automaticly Image Docker. |
+|K3d |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/k3d.md) | k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes distribution) in docker.|
+|K3s |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/k3s.md) |Lightweight Kubernetes Version. |
+|K9s |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/k9s.md) |K9s provides a terminal UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources. |
+|Kind |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/kind.md) | Kind is a tool for running local Kubernetes clusters using Docker container “nodes”.|
+|Kompose |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/kompose.md) |Kompose is just a tool for convert a docker-compose to K8s YAML file. |
+|Krew |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/krew.md) |Krew is the plugin manager for kubectl command-line tool. |
+|Kubeadm |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/kubeadm.md) |Provisioning K8s with KubeAdm. |
+|Kustomize |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/kustomize.md) | Customizing Kubernetes configurations.|
+|Minikube |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/minikube.md) |Cluster K8s for Development. |
+|Ngrok |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/ngrok.md) | Distributed reverse proxy.|
+|OpenSSL |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/openSSL.md) |Generate SSL with OpenSSL for Ingress|
+|HPA Tester |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/testloadHPA.md) |Test Horizontal Pod Autoscaler |
