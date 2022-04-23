@@ -2,20 +2,15 @@
 
 ```
 just to documentation the results of my learning.
-Will be updated soon.
+this repository will always be updated.
 ```
-
-## Anything about K8s
-```
-https://collabnix.github.io/kubetools/
-```
-
 
 ## List Document
 
 | Name |  Link | Description |
 |--|--|--|
 |**Template YAML**|[**Here**](https://github.com/dennyzhang/kubernetes-yaml-templates) | **All about YAML Object Template**|
+|**Kube Tools**|[**Here**](https://collabnix.github.io/kubetools/) | **All about Kubernetes Tools**|
 |ArgoCD  | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/ArgoCD) |  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.|
 |Consul|  [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Consul)|  Service mesh observability & monitoring tools.|
 |Helm |[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Helm)| Helm is the package manager for Kubernetes. |
