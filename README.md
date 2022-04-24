@@ -52,3 +52,4 @@ this repository will always be updated.
 |Ngrok |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/ngrok.md) | Distributed reverse proxy.|
 |OpenSSL |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/openSSL.md) |Generate SSL with OpenSSL for Ingress.|
 |HPA Tester |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/testloadHPA.md) |Test Horizontal Pod Autoscaler.|
+|Image Registry|[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Registry)|Self Docker Image Registry on K8s|
