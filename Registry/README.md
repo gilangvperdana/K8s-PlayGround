@@ -7,6 +7,7 @@ Provisioning Container Image Registry on Kubernetes Cluster
 ```
 git clone https://github.com/gilangvperdana/K8s-PlayGround
 cd K8s-PlayGround/
+kubectl create ns kube-registry
 kubectl apply -f reg.yaml
 ```
 
