@@ -53,3 +53,4 @@ this repository will always be updated.
 |OpenSSL |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/openSSL.md) |Generate SSL with OpenSSL for Ingress.|
 |HPA Tester |[Here](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/dll/testloadHPA.md) |Test Horizontal Pod Autoscaler.|
 |Image Registry|[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Registry)|Self Docker Image Registry on K8s|
+|Jenkins|[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Jenkins)|Jenkins Provisioning on Kubernetes|
