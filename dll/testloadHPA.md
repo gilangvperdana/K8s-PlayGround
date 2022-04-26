@@ -24,6 +24,14 @@ CTRL+C if you done to test a load.
 $ watch kubectl get pod
 ```
 
+## Metric Server Error
+```
+"Failed to scrape node" err="Get \"https://192.168.65.4:10250/stats/summary?only_cpu_and_memory=true\": x509: cannot validate certificate for 192.168.65.4 because it doesn't contain any IP SANs" node="docker-desktop"
+```
+```
+kubectl patch deployment metrics-server -n kube-system --type 'json' -p '[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls"}]'
+```
+
 ## Source :
 ```
 https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
