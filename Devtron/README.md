@@ -27,6 +27,11 @@ helm install devtron devtron/devtron-operator --create-namespace --namespace dev
 kubectl logs -f -l app=inception -n devtroncd
 ```
 
+## Ingress Installation
+- Install ingress for access
+```
+kubectl apply -f devtron-ing.yaml -n devtroncd
+```
 
 ## Dashboard
 ```
