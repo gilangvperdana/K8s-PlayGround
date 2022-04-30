@@ -27,7 +27,7 @@ helm install devtron devtron/devtron-operator --create-namespace --namespace dev
 kubectl logs -f -l app=inception -n devtroncd
 ```
 
-```
+
 ## Dashboard
 ```
 kubectl get svc -n devtroncd devtron-service -o jsonpath='{.status.loadBalancer.ingress}'
