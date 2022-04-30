@@ -14,6 +14,7 @@ Helm
 helm repo add devtron https://helm.devtron.ai
 helm install devtron devtron/devtron-operator --create-namespace --namespace devtroncd
 kubectl -n devtroncd get installers installer-devtron -o jsonpath='{.status.sync.status}'
+```
 
 - Install with Gitee
 ```
