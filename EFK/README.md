@@ -15,6 +15,7 @@ kubectl apply -f . -n logging
 ```
 
 ## Access
+You can change to cluster IP endpoint and take it easy!
 - Elastic Search :
     - http://localhost:9200/_cluster/state?pretty
 - Kibana :
