@@ -44,6 +44,14 @@ username : admin
 password : $ kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.ACD_PASSWORD}' | base64 -d
 ```
 
+## Delete
+```
+helm uninstall devtron --namespace devtroncd
+kubectl delete -n devtroncd -f https://raw.githubusercontent.com/devtron-labs/charts/main/charts/devtron/crds/crd-devtron.yaml
+kubectl delete -n argo -f https://raw.githubusercontent.com/devtron-labs/devtron/main/manifests/yamls/workflow.yaml
+kubectl delete ns devtroncd devtron-cd devtron-ci devtron-demo
+```
+
 ## Source
 ```
 https://docs.devtron.ai/
