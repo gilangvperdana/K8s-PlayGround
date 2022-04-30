@@ -10,16 +10,13 @@ Provisioning EFK Stack on Kubernetes Cluster
 ```
 Kubernetes Cluster
 ```
-## Kibana ES Endpoint
-- first, deploy Elastic Search
-- copy ClusterIP of Elastic Search
-- paste on kibana.yaml on value line `41`
-- Then, deploy Kibana
 
 ## Installation
 ```
 kubectl apply -f ns.yaml
-kubectl apply -f . -n logging
+kubectl apply -f es_pv.yaml,es_statefulset.yaml,es_svc.yaml -n logging
+kubectl apply -f kibana.yaml -n logging
+kubectl apply -f fluentd.yaml -n logging
 ```
 
 ## Access
