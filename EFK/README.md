@@ -14,7 +14,7 @@ Kubernetes Cluster
 ## Installation
 ```
 kubectl apply -f ns.yaml
-kubectl apply -f es_pv.yaml,es_statefulset.yaml,es_svc.yaml -n logging
+kubectl apply -f es_statefulset.yaml,es_svc.yaml -n logging
 kubectl apply -f kibana.yaml -n logging
 kubectl apply -f fluentd.yaml -n logging
 ```
@@ -22,8 +22,11 @@ kubectl apply -f fluentd.yaml -n logging
 ## Access
 You can change to cluster IP endpoint and take it easy!
 - Elastic Search :
+    - kubectl port-forward es-cluster-0 9200:9200
     - http://localhost:9200/_cluster/state?pretty
+    - http://localhost:9200/_cat/indices?v
 - Kibana :
+    - kubectl port-forward <kibana-pod-name> 5601:5601
     - http://localhost:5601/
 
 ## Kibana

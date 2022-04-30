@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: kibana
-        image: docker.elastic.co/kibana/kibana:7.16.0
+        image: docker.elastic.co/kibana/kibana:7.5.0
         resources:
           limits:
             cpu: 1000m
@@ -38,6 +38,6 @@ spec:
             cpu: 100m
         env:
           - name: ELASTICSEARCH_URL
-            value: http://elasticsearch:9200
+            value: http://elasticsearch.logging.svc.cluster.local:9200
         ports:
         - containerPort: 5601
