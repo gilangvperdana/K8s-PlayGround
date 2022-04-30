@@ -3,6 +3,9 @@
 Provisioning EFK Stack on Kubernetes Cluster
 ```
 
+## Architecture
+![](docs/img/image1.png)
+
 ## Environment
 ```
 Kubernetes Cluster
