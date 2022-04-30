@@ -5,31 +5,25 @@ metadata:
     app: devtron
     release: devtron
   name: devtron-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
-  ingressClassName: nginx
   rules:
-  - http:
-      paths:
-      - backend:
-          service:
-            name: devtron-service
-            port:
-              number: 80
-        host: devtron.research.com
-        path: /orchestrator
-        pathType: ImplementationSpecific 
-      - backend:
-          service:
-            name: devtron-service
-            port:
-              number: 80
-       Host: devtron.research.com
-        path: /dashboard
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: devtron-service
-            port:
-              number: 80
-        path: /grafana
-        pathType: ImplementationSpecific  
+    - host: devtron.research.com
+      http:
+        paths:
+          - path: /dashboard
+            pathType: ImplementationSpecific 
+            backend:
+              service:
+                name: dashboard-service
+                port:
+                  number: 80
+          - path: /grafana
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: devtron-grafana
+                port:
+                  number: 80
