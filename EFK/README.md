@@ -20,7 +20,10 @@ kubectl apply -f . -n logging
 - Kibana :
     - http://localhost:5601/
 
-## Testing loging with BusyBox
+## Testing logging with BusyBox
 ```
 kubectl apply -f containerlogging -n logging
 ```
+
+## Source
+- https://azmifarih.medium.com/how-to-set-up-an-elasticsearch-fluentd-and-kibana-efk-logging-stack-on-kubernetes-1c455a6f17a8
