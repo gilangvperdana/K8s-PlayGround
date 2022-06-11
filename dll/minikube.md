@@ -32,6 +32,9 @@ $ minikube config set memory 8192
 $ minikube config set cpus 4
 $ minikube start --disk-size 300000 --kubernetes-version=v1.21.9
 
+with Specify Directory on VM :
+$ minikube start --mount=true --mount-string=$(HOME)/somedir/on/host/:/somedir/on/vm/ --kubernetes-version=v1.21.9
+
 $ sudo kubectl get nodes
 Happy Orchestrating.
 
