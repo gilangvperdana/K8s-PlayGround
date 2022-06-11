@@ -127,6 +127,33 @@ socks5://127.0.0.1:500
 And then copy paste the .kube/config file to Lens YAML. And then you can connect to your cluster and Happy Monitoring !
 ```
 
+## Auto Start Minikube with Systemd
+```
+nano /usr/lib/systemd/system/minikube.service
+```
+```
+[Unit]
+Description=minikube
+After=network-online.target firewalld.service containerd.service docker.service
+Wants=network-online.target docker.service
+Requires=docker.socket containerd.service docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/minikube start 
+ExecStop=/usr/local/bin/minikube stop
+User=minikube
+
+[Install]
+WantedBy=multi-user.target
+```
+```
+systemctl daemon-reload 
+systemctl enable minikube
+systemctl start minikube
+```
+
 ## Expose to Private Network
 ```
 https://gist.github.com/gilangvperdana/2912ced3f543f7dc7f909eebd103684e
