@@ -51,6 +51,11 @@ $ eval $(minikube docker-env)
 $ docker ps
 ```
 
+## Delte Profile
+```
+$ minikube delete -p your_profile
+```
+
 ## Dashboard :
 ```
 $ minikube dashboard
