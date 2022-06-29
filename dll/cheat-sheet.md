@@ -70,6 +70,12 @@ kubectl create -f namayamlfile.yaml
 Membuat service untuk di exposed dari Config YAML:
 kubectl create -f namayamlfile.yaml
 
+Define Storage Class PVC :
+---
+spec:
+  storageClassName: standard
+---
+
 Ekspos tanpa YAML:
 kubectl expose pod NAMAPOD --name=NAMASERVICE --port=PORTJALAN
 kubectl expose pod NAMAPOD --name=NAMASERVICE --port=PORTJALAN --type=TIPEPORT (NodePort,ClusterPort,etc).
