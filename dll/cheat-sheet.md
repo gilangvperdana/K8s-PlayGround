@@ -86,6 +86,9 @@ kubectl scale --replicas=5 deployment/NAMADEPLOYMENT
 Update Deployment dari Image yang Baru :
 kubectl rollout restart deployment deployment_name
 
+CONTAINERD KUBERNETES PRUNE IMAGE NOT USED :
+crictl rmi --prune
+
 Autoscalling dengan yaml file/ HPA (HorizontalPodAutoScaler):
 kubectl create -f fileHPA.yaml
 kubectl get hpa
