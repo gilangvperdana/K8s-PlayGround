@@ -59,6 +59,10 @@ $ kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='
 ## Reset Password :
 ```
 $ kubectl exec -it rancher_webhook_pod_name -n cattle-system reset-password
+
+OR
+
+$ kubectl -n cattle-system exec $(kubectl -n cattle-system get pods -l app=rancher | grep '1/1' | head -1 | awk '{ print $1 }') -- reset-password
 ```
 
 ## Uninstall Rancher :
