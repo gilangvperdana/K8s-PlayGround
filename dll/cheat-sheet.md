@@ -131,6 +131,11 @@ Linux - "/etc/hosts"
 MENAMBAHKAN LABEL PADA NODE:
 kubectl label nodes <node-name> <label-key>=<label-value>
 
+CONTAINERD exec Container :
+kubectl get pod <podname> -o jsonpath="{.status.containerStatuses[].containerID}" | sed 's,.*//,,'
+kubectl get pod <podname> -o wide
+runc --root /run/containerd/runc/k8s.io/ exec -t -u 0 <containerID> sh
+
 Problem :
 The connection to the server 10.148.0.5:6443 was refused - did you specify the right host or port?
 systemctl restart kubelet
