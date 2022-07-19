@@ -65,6 +65,17 @@ OR
 $ kubectl -n cattle-system exec $(kubectl -n cattle-system get pods -l app=rancher | grep '1/1' | head -1 | awk '{ print $1 }') -- reset-password
 ```
 
+## Generate User when not any User Declared
+```
+nano .bashrc
+---
+KUBECONFIG /root/.kube/config
+---
+
+su
+kubectl --kubeconfig $KUBECONFIG -n cattle-system exec $(kubectl --kubeconfig $KUBECONFIG -n cattle-system get pods -l app=rancher | grep '1/1' | head -1 | awk '{ print $1 }') -- ensure-default-admin
+```
+
 ## Uninstall Rancher :
 ```
 $ helm delete rancher -n cattle-system
