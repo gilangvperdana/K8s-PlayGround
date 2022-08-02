@@ -39,9 +39,15 @@ $ kubectl apply -f confmap.yaml -n metallb-system
 ```
 
 ## Error
+- 1
 ```
 If you get a message error on Metallb_Speaker POD like "secret 'memberlist' not found" you can try :
 $ kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+```
+
+- 2
+```
+If you deploy on top of Openstack, you can disable your `Instance Port Security` if you want to access metall-lb pool outside the cluster
 ```
 
 ## Source :
