@@ -5,6 +5,8 @@ Harbor is an open source registry that secures artifacts with policies and role-
 
 ## Installation
 ```
+helm repo add harbor https://helm.goharbor.io
+
 helm install harbor harbor/harbor\
 --create-namespace\
 --namespace harbor\
