@@ -24,6 +24,52 @@ helm install harbor harbor/harbor\
 --set persistence.enabled=false \
 ```
 
+## Connect to Local Docker Environment
+- Containerd
+```
+mkdir -p /etc/containerd/core.harbor.domain
+/etc/docker/certs.d/harbor.domain.com/ca.crt
+Insert our `ca.crt` `harbor-ingress` on Kubesecret to `ca.crt`
+
+nano /etc/containerd/config.toml
+---
+# To configure endpoint Connection address 
+[plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+[plugins."io.containerd.grpc.v1.cri".registry.mirrors."core.harbor.domain"]
+endpoint = ["https://core.harbor.domain"]
+# To configure ca File path, user name and password 
+[plugins."io.containerd.grpc.v1.cri".registry.configs]
+[plugins."io.containerd.grpc.v1.cri".registry.configs."core.harbor.domain".tls]
+ca_file = "/etc/containerd/core.harbor.domain/ca.crt"
+[plugins."io.containerd.grpc.v1.cri".registry.configs."core.harbor.domain".auth]
+username = "admin"
+password = "Harbor12345"
+---
+
+Ref : https://copyfuture.com/blogs-details/202204160404132173
+```
+
+- Docker
+```
+mkdir -p /etc/docker/certs.d/harbor.domain.com
+touch /etc/docker/certs.d/harbor.domain.com/ca.crt
+Insert our `ca.crt` `harbor-ingress` on Kubesecret to `ca.crt`
+systemctl restart docker
+```
+
+## Store Private Registry Credentials on Kubernetes
+```
+docker login harbor.domain.com
+kubectl create secret generic harbor-registry-secret --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson -n YOUR_NAMESPACE
+```
+
+- Add this on your manifest
+```
+spec :
+  imagePullSecrets:
+          - name:harbor-registry-secret
+```
+
 ## Source
 ```
 https://github.com/goharbor/harbor
