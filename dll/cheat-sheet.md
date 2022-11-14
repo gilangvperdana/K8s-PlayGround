@@ -76,6 +76,12 @@ spec:
   storageClassName: standard
 ---
 
+Make non-default & default storage class :
+---
+kubectl patch storageclass longhorn -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl patch storageclass nfs-cluster-client -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+---
+
 Ekspos tanpa YAML:
 kubectl expose pod NAMAPOD --name=NAMASERVICE --port=PORTJALAN
 kubectl expose pod NAMAPOD --name=NAMASERVICE --port=PORTJALAN --type=TIPEPORT (NodePort,ClusterPort,etc).
