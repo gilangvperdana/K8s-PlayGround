@@ -97,6 +97,23 @@ finalizer:
 then, save.
 ```
 
+## Add Cluster to Rancher UI
+We can add another Kubernetes Cluster on Rancher UI just follow Guide on Rancher UI how to add some cluster, but the concern is to bypass domain to level pod when cluster will be joined. So this workaround fix my issue while i want to join another cluster on Private IP & Domain.
+```
+## Add /etc/hosts Rancher Ingress UI to cluster destination
+
+nano /etc/hosts
+192.168.10.1 rancher.domain.local
+
+## Join with --insecure (like Rancher UI suggest on import cluster)
+Pod `cattle-cluster-agent` will be failed because not resolving Rancher UI domain, we can update `cattle-cluster-agent` deployment manifest to use hosts level /etc/hosts with :
+
+kubectl edit deployment cattle-cluster-agent -n cattle-system
+---
+hostNetwork: true
+dnsPolicy: ClusterFirstWithHostNet
+```
+
 ## Mini Testing LAB :
 ```
 You can testing a Rancher Dashboard with Try to deploy HelloWorld.yaml.
