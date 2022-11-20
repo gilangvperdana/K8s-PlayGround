@@ -12,6 +12,7 @@ this repository will always be updated.
 |**Kubectl CheatSheet**|[**Here**](https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4) | **All about Kubectl Command Cheat Sheet**|
 |**Template YAML**|[**Here**](https://github.com/dennyzhang/kubernetes-yaml-templates) | **All about YAML Object Template**|
 |**Kube Tools**|[**Here**](https://collabnix.github.io/kubetools/) | **All about Kubernetes Tools**|
+| Kubernetes Prometheus Stack |[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/KubePromStack) | Monitoring K8s with Bundled Prometheus Stack |
 | NFS Subdir External Provisioner |[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/NFS_SubdirExternal) | Kubernetes NFS PV Solution |
 |LongHorn|[Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Longhorn) | Cloud-Native distributed storage built on and for Kubernetes. |
 |Kubectl  | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Kubectl) |  a Tools that to help use a Kubernetes Cluster.|
