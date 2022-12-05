@@ -26,6 +26,29 @@ $ chmod +x argocd
 $ sudo mv argocd /usr/local/bin/
 ```
 
+## Apply Notification to Slack or Teams
+```
+## Change this line to our environment
+nano cm-argonotif.yaml
+
+---
+## FOR SLACK
+  subscriptions: |
+    - recipients:
+      - slack:NAME_OF_CHANNEL_ON_SLACK
+      triggers:
+      - on-sync-status-succeeded
+  service.slack: |
+    token: xoxb-1420182XXXXX-43847063XXXXX-J4mUxJXhvSkd1rhbjnXXXXX
+
+## FOR TEAMS
+##  service.teams: |
+##    recipientUrls:
+##      TeamsAN: https://ADAPTIVE.webhook.office.com/webhookb2/XXXX
+
+kubectl apply -f cm-argonotif.yaml -n argocd
+```
+
 ## Source
 ```
 https://argo-cd.readthedocs.io/en/stable/
