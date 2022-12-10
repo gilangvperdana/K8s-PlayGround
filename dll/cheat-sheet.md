@@ -155,6 +155,9 @@ systemctl restart kubelet
 
 MEMBERIKAN ROLE:
 kubectl label nodes NAMANODE node-role.kubernetes.io/worker=worker
+
+DELETE POD STUCK :
+kubectl delete pod <PODNAME> --grace-period=0 --force --namespace <NAMESPACE>
 ```
 
 ## Downgrade :
