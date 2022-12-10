@@ -145,6 +145,10 @@ runc --root /run/containerd/runc/k8s.io/ exec -t -u 0 <containerID> sh
 DELETE STUCK NAMESPACE :
 NS=`kubectl get ns |grep Terminating | awk 'NR==1 {print $1}'` && kubectl get namespace "$NS" -o json   | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/"   | kubectl replace --raw /api/v1/namespaces/$NS/finalize -f -
 
+DELETE STUCK NAMESPACE II :
+kubectl get ns NAME_NAMESPACE_STUCK -o json > NAME_NAMESPACE_STUCK.json
+kubectl replace --raw "/api/v1/namespaces/NAME_NAMESPACE_STUCK/finalize" -f ./NAME_NAMESPACE_STUCK.json
+
 Problem :
 The connection to the server 10.148.0.5:6443 was refused - did you specify the right host or port?
 systemctl restart kubelet
