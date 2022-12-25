@@ -28,6 +28,20 @@ spec:
 After that, use a external ip nginx-ingress to access your services.
 ```
 
+## Activate Real IP behind Reverse Proxy
+- Edit configmap
+```
+data:
+  proxy-real-ip-cidr: 172.20.1.2/32
+  use-forwarded-headers: "true"
+  compute-full-forwarded-for: "true"
+```
+
+- Edit service (myingress-ingress-nginx-controller)
+```
+  externalTrafficPolicy: Local
+```
+
 ## Source :
 ```
 https://kubernetes.github.io/ingress-nginx/
