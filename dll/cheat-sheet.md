@@ -160,6 +160,12 @@ DELETE POD STUCK :
 kubectl delete pod <PODNAME> --grace-period=0 --force --namespace <NAMESPACE>
 ```
 
+## Certificates
+```
+/usr/local/bin/k8s-certs-renew.sh
+openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text
+```
+
 ## Downgrade :
 ```
 $ sudo apt-get install -qy kubelet=1.21.0-00 kubectl=1.21.0-00 kubeadm=1.21.0-00 --allow-downgrades --allow-change-held-packages
