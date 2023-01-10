@@ -20,6 +20,7 @@ kubectl create -f cluster.yaml
 
 ## On AIO K8s Ceph Rook Cluster
 - on `cluster.yaml` is example for AIO K8s Cluster
+- Sometimes `100% pg is not active` will appear, to fix this execute this :
 ```
 kubectl -n rook-ceph exec -it deploy/rook-ceph-tools -- bash
 ceph osd getcrushmap -o /etc/ceph/crushmap
