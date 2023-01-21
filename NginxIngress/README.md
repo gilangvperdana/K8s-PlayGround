@@ -42,6 +42,8 @@ data:
   externalTrafficPolicy: Local
 ```
 
+## 
+
 ## Source :
 ```
 https://kubernetes.github.io/ingress-nginx/
