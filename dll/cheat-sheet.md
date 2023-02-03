@@ -158,6 +158,14 @@ kubectl label nodes NAMANODE node-role.kubernetes.io/worker=worker
 
 DELETE POD STUCK :
 kubectl delete pod <PODNAME> --grace-period=0 --force --namespace <NAMESPACE>
+
+MERGE KUBECONFIG :
+---
+#!/bin/bash
+# PLEASE NAME YOUR NEW KUBECONFIG to "new-config"
+cp ~/.kube/config /root/dll/merge/
+KUBECONFIG=/root/dll/merge/config:/root/dll/merge/new-config kubectl config view --flatten > /root/dll/merge/merged-config
+---
 ```
 
 ## Certificates
