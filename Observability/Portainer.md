@@ -25,6 +25,29 @@ helm install --create-namespace -n portainer portainer portainer/portainer \
 Access on portainer.example.io
 ```
 
+## Behind Reverse Proxy
+```
+server {
+    listen 443;
+    ssl on;
+    server_name k8s.adaptivenetworklab.org;
+    error_page 497 https://$http_host$request_uri;
+
+    ssl_certificate /etc/letsencrypt/live/k8s.adaptivenetworklab.org-0001/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/k8s.adaptivenetworklab.org-0001/privkey.pem;
+
+    location / {
+        proxy_pass https://ingress_endpoint;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+        proxy_set_header host k8s.adaptivenetworklab.org;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_http_version 1.1;
+    }
+}
+```
+
 ## Expose with NodePort
 ```
 helm install --create-namespace -n portainer portainer portainer/portainer
