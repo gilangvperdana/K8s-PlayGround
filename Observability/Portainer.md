@@ -53,4 +53,5 @@ Point to your Ingress Endpoint.
 
 ```
 https://docs.portainer.io/v/ce-2.9/start/install/server/kubernetes/baremetal
+https://docs.portainer.io/
 ```
