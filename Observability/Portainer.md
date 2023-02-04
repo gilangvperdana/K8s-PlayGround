@@ -48,6 +48,17 @@ server {
 }
 ```
 
+- Nginx Ingress Kubernetes
+```
+  annotations:
+    meta.helm.sh/release-name: portainer
+    meta.helm.sh/release-namespace: portainer
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.org/location-snippets: |
+      proxy_set_header   Upgrade            $http_upgrade;
+      proxy_set_header   Connection         "upgrade";
+```
+
 ## Expose with NodePort
 ```
 helm install --create-namespace -n portainer portainer portainer/portainer
