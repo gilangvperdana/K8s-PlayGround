@@ -52,7 +52,7 @@ rules:
 
 ### Role Binding Role and Namespace
 ```
-kubectl create rolebinding alice --role gl --user gl -n application
+kubectl create rolebinding gl --role gl --user gl -n application
 ```
 
 ### Create Cert
