@@ -43,6 +43,5 @@ data:
 ```
 
 ## Source :
-```
-https://kubernetes.github.io/ingress-nginx/
-```
+- https://kubernetes.github.io/ingress-nginx/
+- https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/
