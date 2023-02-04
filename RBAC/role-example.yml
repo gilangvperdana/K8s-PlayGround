@@ -1,0 +1,255 @@
+# APPLICATION NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: application
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
+---
+# DEFAULT NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
+---
+# KUBE-SYSTEM NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: kube-system
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
+---
+# INGRESS-NGINX NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: ingress-nginx
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
+---
+# istio-operator NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: istio-operator
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
+---
+# istio-system NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: istio-system
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
+---
+# longhorn-system NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: longhorn-system
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
+---
+# metallb-system NAMESPACE
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: metallb-system
+  name: gilang
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "services", "pods/log", "configmaps", "secrets", "resourcequotas", "limitranges", "nodes", "leases", "endpoints", "persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["policy"]
+  resources: ["poddisruptionbudgets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["storageclasses"]
+  verbs: ["get", "list", "watch"]
