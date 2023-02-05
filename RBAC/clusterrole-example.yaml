@@ -1,0 +1,95 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # "namespace" dihilangkan karena ClusterRole tidak menggunakan Namespace
+  name: gilang-ingress-reader
+rules:
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+# ClusterRoleBinding ini memungkinkan siapapun di dalam kelompok "manager" untuk membaca Secret di berbagai Namespace.
+kind: ClusterRoleBinding
+metadata:
+  name: gilang-ingress-reader-global
+subjects:
+- kind: User
+  name: gilang # Nama peka kapital
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: gilang-ingress-reader
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # "namespace" dihilangkan karena ClusterRole tidak menggunakan Namespace
+  name: gilang-ns-reader
+rules:
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+# ClusterRoleBinding ini memungkinkan siapapun di dalam kelompok "manager" untuk membaca Secret di berbagai Namespace.
+kind: ClusterRoleBinding
+metadata:
+  name: gilang-ns-reader-global
+subjects:
+- kind: User
+  name: gilang # Nama peka kapital
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: gilang-ns-reader
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # "namespace" dihilangkan karena ClusterRole tidak menggunakan Namespace
+  name: gilang-nodes-reader
+rules:
+- apiGroups: [""]
+  resources: ["nodes"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+# ClusterRoleBinding ini memungkinkan siapapun di dalam kelompok "manager" untuk membaca Secret di berbagai Namespace.
+kind: ClusterRoleBinding
+metadata:
+  name: gilang-nodes-reader-global
+subjects:
+- kind: User
+  name: gilang # Nama peka kapital
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: gilang-nodes-reader
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # "namespace" dihilangkan karena ClusterRole tidak menggunakan Namespace
+  name: gilang-pv
+rules:
+- apiGroups: [""]
+  resources: ["persistentvolumeclaims", "persistentvolumes"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+# ClusterRoleBinding ini memungkinkan siapapun di dalam kelompok "manager" untuk membaca Secret di berbagai Namespace.
+kind: ClusterRoleBinding
+metadata:
+  name: gilang-pv-global
+subjects:
+- kind: User
+  name: gilang # Nama peka kapital
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: gilang-pv
+  apiGroup: rbac.authorization.k8s.io
