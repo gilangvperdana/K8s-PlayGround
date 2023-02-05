@@ -85,3 +85,4 @@ awk 'NF {sub(/\r/, ""); printf "%s",$0;}' ./CERT-TEMP > CERT-FINAL
 ## Reference
 - https://anaisurl.com/kubernetes-rbac/
 - https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/
+- https://kubernetes.io/id/docs/reference/access-authn-authz/rbac/
