@@ -44,7 +44,6 @@ Kube token is on : /var/lib/rancher/k3s/server/node-token
 ```
 
 ## Source
-```
-https://k3s.io/
-https://github.com/k3s-io/k3s
-```
+- https://k3s.io/
+- https://github.com/k3s-io/k3s
+- https://www.rancher.co.jp/docs/k3s/latest/en/installation/
