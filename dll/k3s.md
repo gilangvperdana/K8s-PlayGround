@@ -14,6 +14,9 @@ $ k3s kubectl get node
 
 ## To specify kubeApi port
 curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--https-listen-port 7443" sh -
+
+## To specify domain
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--https-listen-port 7443 --cluster-domain lab.k3s.org" sh -
 ```
 
 ## Multi Node
