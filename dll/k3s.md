@@ -11,6 +11,9 @@ $ curl -sfL https://get.k3s.io | sh -
 # Check for Ready node,
 takes maybe 30 seconds
 $ k3s kubectl get node
+
+## To specify kubeApi port
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--https-listen-port 7443" sh -
 ```
 
 ## Multi Node
