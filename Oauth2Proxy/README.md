@@ -22,8 +22,8 @@ In our case, we use Github to validate token, so we must create some OAUTH2Apps 
     - `Client secrets` -> `from-literal=client-secret`
 ```
 kubectl create secret generic oauth2-proxy-creds-github \
-  --from-literal=client-id=ed78e0fb8bede55dcf61 \
-  --from-literal=client-secret=a6f631786e838e34a97a495bfff03b1a997535b3 \
+  --from-literal=client-id=XXXXXXXXXXXXXXXXXXXX \
+  --from-literal=client-secret=YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY \
   --from-literal=cookie-secret=ababababababababababcabc
 ```
 
