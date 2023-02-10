@@ -1,0 +1,30 @@
+config: 
+  existingSecret: oauth2-proxy-creds-github
+ 
+extraArgs: 
+  whitelist-domain: .example.org
+  cookie-domain: .example.org
+  provider: github 
+  # restrict to specific user
+  # github-user: prastamaha 
+  
+  # restrict to specific github org
+  github-org: example
+  # Allow user on our github org with email auth
+  scope: user:email
+
+sessionStorage: 
+  type: redis
+  redis:
+    password: $REDIS_PASSWORD
+    clientType: standalone 
+    standalone: 
+      connectionUrl: redis://redis-master.redis.svc.cluster.local:6379 
+ 
+ingress: 
+  enabled: true 
+  path: / 
+  hosts: 
+    - oauth.example.org
+  annotations: 
+    kubernetes.io/ingress.class: nginx

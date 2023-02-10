@@ -1,0 +1,3 @@
+# Specify our available storageClass
+global:
+  storageClass: longhorn
