@@ -15,8 +15,8 @@ export REDIS_PASSWORD=$(kubectl get secret redis -o jsonpath="{.data.redis-passw
 
 ## Prepare OAUTH2Proxy
 In our case, we use Github to validate token, so we must create some OAUTH2Apps on Github on `Settings -> Developer Settings -> OAuth Apps -> New Oauth Apps`
-  - Homepage URL : user1.example.com
-  - Authorization Callback URL : oauth.example.com/oauth2/callback
+  - Homepage URL : `user1.example.org`
+  - Authorization Callback URL : `oauth.example.org/oauth2/callback`
   - Then from github OAUTH we have :
     - `Client ID` -> `from-literal=client-id`
     - `Client secrets` -> `from-literal=client-secret`
