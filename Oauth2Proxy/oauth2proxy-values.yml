@@ -6,7 +6,7 @@ extraArgs:
   cookie-domain: .example.org
   provider: github 
   # restrict to specific user
-  # github-user: prastamaha 
+  # github-user: github_username 
   
   # restrict to specific github org
   github-org: example
