@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: staging
+  annotations:
+    kubernetes.io/ingress.class: adaptive-gateway #our Ingress class name
+    nginx.ingress.kubernetes.io/use-regex: 'true' 
+spec:
+  tls:
+    - hosts:
+        - api.example.org #our Domain
+      secretName: apiexample
+    - host: api.example.org #our Domain
+      http:
+        paths:
+          - path: /v1/dashboard/user/ #our Path domain
+            pathType: Prefix
+            backend:
+              service:
+                name: login #ourService
+                port:
+                  number: 3001 #our Service port
