@@ -42,5 +42,16 @@ data:
   externalTrafficPolicy: Local
 ```
 
+# Create TLS
+- You can generate selfSigned with my [Script](https://github.com/gilangvperdana/K8s-PlayGround/blob/master/NginxIngress/genSSL.sh)
+```
+spec:
+  tls:
+    - hosts:
+        - notary.registry.adaptivenetlab.site
+      secretName: harbor-ingress
+  rules:
+```
+
 ## Source :
 - https://kubernetes.github.io/ingress-nginx/
