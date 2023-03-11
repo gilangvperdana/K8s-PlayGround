@@ -4,20 +4,21 @@ metadata:
   name: test-ingress
   namespace: staging
   annotations:
-    kubernetes.io/ingress.class: adaptive-gateway #our Ingress class name
+    kubernetes.io/ingress.class: example-gateway
     nginx.ingress.kubernetes.io/use-regex: 'true' 
 spec:
   tls:
     - hosts:
-        - api.example.org #our Domain
-      secretName: apiexample
-    - host: api.example.org #our Domain
+        - api.example.local
+      secretName: apistaging-local
+  rules:
+    - host: api.example.local
       http:
         paths:
-          - path: /v1/dashboard/user/ #our Path domain
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: login #ourService
+                name: login
                 port:
-                  number: 3001 #our Service port
+                  number: 3001
