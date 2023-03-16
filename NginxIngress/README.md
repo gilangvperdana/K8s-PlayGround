@@ -32,9 +32,10 @@ After that, use a external ip nginx-ingress to access your services.
 - Edit configmap
 ```
 data:
-  proxy-real-ip-cidr: 172.20.1.2/32
-  use-forwarded-headers: "true"
-  compute-full-forwarded-for: "true"
+  allow-snippet-annotations: 'true'
+  compute-full-forwarded-for: 'true'
+  proxy-real-ip-cidr: 172.20.0.0/16, 10.0.0.0/16, 192.168.10.0/24, 192.168.100.0/24
+  use-forwarded-headers: 'true'
 ```
 
 - Edit service (myingress-ingress-nginx-controller)
