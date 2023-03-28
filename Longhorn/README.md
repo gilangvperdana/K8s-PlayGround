@@ -40,7 +40,7 @@ Setting -> General.
   - Backup Target -> `s3://BUCKET_NAME@REGION_NAME/FOLDER_NAME`
   - Backup Target Credential Secret -> `minio-secret`
 
-- Then try to Create a New Backup
+- Then try to Create a New Backup <br>
    Volume -> Select your PV -> Create a New Backup > then see on Backup tabs (if already there, backup has been succesfully to S3 bucket).
 
 ## Reference
