@@ -20,6 +20,8 @@ kubectl restart rollout deployment/csi-snapshotter -n longhorn-system
 
 ## Backup to Minio/S3
 - Create Secret
+  - You can use `cat minio-ssl.pem ca.pem | base64 | tr -d "\n"` to generate base64 tls cert.
+    - Warn : As the command shows, SSL certificates in the validation chain must be concatenated and \n characters from the base64 encoded SSL pem must be removed.
 ```
 apiVersion: v1
 kind: Secret
@@ -34,7 +36,6 @@ data:
   AWS_CERT: #BASE64 FULLCHAIN.PEM
   AWS_CERT_KEY: #BASE64 PRIVKEY.PEM
 ```
-
 - Configure on Longhorn UI
 Setting -> General.
   - Backup Target -> `s3://BUCKET_NAME@REGION_NAME/FOLDER_NAME`
