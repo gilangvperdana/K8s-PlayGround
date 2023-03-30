@@ -12,6 +12,7 @@ this repository will always be updated.
 |**Kubectl CheatSheet**|[**Here**](https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4) | **All about Kubectl Command Cheat Sheet**|
 |**Template YAML**|[**Here**](https://github.com/dennyzhang/kubernetes-yaml-templates) | **All about YAML Object Template**|
 |**Kube Tools**|[**Here**](https://collabnix.github.io/kubetools/) | **All about Kubernetes Tools**|
+| K1s | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/K1s) | Simple CLI Kube Dashboard |
 | Base64 Template GenDecrypt | [Here](https://gist.github.com/gilangvperdana/e7a7f60cd0e1add9b4b566ab64da51fa) | Simple Bash to Decrypt & Generate Base64|
 | OAUTH2PROXY | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Oauth2Proxy) | Authenticated your Deployment! |
 | Coroot | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Coroot) | A monitoring and troubleshooting tool for microservice architectures. |
