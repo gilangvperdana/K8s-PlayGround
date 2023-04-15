@@ -15,7 +15,7 @@ If you want to use snapshot feature, somehow we must install CRD external provis
 ```
 git clone https://github.com/kubernetes-csi/external-snapshotter
 kubectl apply -f client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml,client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml,client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-kubectl restart rollout deployment/csi-snapshotter -n longhorn-system
+kubectl rollout restart deployment/csi-snapshotter -n longhorn-system
 ```
 
 ## Backup to Minio/S3
