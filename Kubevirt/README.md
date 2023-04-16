@@ -41,3 +41,7 @@ kubectl get vmis -n vm
 kubectl describe vms testvm -n vm
 kubectl describe vmi testvm -n vm
 ```
+
+## Reference
+- https://kubevirt.io/
+- https://github.com/kubevirt/kubevirt
