@@ -51,6 +51,7 @@ kubectl delete mutatingwebhookconfigurations virt-api-mutator
 kubectl delete validatingwebhookconfigurations virt-operator-validator
 kubectl delete validatingwebhookconfigurations virt-api-validator
 kubectl delete -f https://github.com/kubevirt/kubevirt/releases/download/${RELEASE}/kubevirt-operator.yaml --wait=false
+kubectl -n kubevirt patch kv kubevirt --type=json -p '[{ "op": "remove", "path": "/metadata/finalizers" }]'
 ```
 
 ## Reference
