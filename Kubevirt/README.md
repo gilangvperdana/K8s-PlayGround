@@ -42,6 +42,17 @@ kubectl describe vms testvm -n vm
 kubectl describe vmi testvm -n vm
 ```
 
+## Remove Kubevirt
+```
+export RELEASE=$(curl https://storage.googleapis.com/kubevirt-prow/release/kubevirt/kubevirt/stable.txt)
+kubectl delete -n kubevirt kubevirt kubevirt --wait=true
+kubectl delete apiservices v1.subresources.kubevirt.io
+kubectl delete mutatingwebhookconfigurations virt-api-mutator
+kubectl delete validatingwebhookconfigurations virt-operator-validator
+kubectl delete validatingwebhookconfigurations virt-api-validator
+kubectl delete -f https://github.com/kubevirt/kubevirt/releases/download/${RELEASE}/kubevirt-operator.yaml --wait=false
+```
+
 ## Reference
 - https://kubevirt.io/
 - https://github.com/kubevirt/kubevirt
