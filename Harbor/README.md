@@ -33,17 +33,13 @@ Insert our `ca.crt` `harbor-ingress` on Kubesecret to `ca.crt`
 
 nano /etc/containerd/config.toml
 ---
-# To configure endpoint Connection address 
-[plugins."io.containerd.grpc.v1.cri".registry.mirrors]
-[plugins."io.containerd.grpc.v1.cri".registry.mirrors."core.harbor.domain"]
-endpoint = ["https://core.harbor.domain"]
-# To configure ca File path, user name and password 
-[plugins."io.containerd.grpc.v1.cri".registry.configs]
-[plugins."io.containerd.grpc.v1.cri".registry.configs."core.harbor.domain".tls]
-ca_file = "/etc/containerd/core.harbor.domain/ca.crt"
-[plugins."io.containerd.grpc.v1.cri".registry.configs."core.harbor.domain".auth]
-username = "admin"
-password = "Harbor12345"
+          endpoint = ["https://registry.harbor.com"]
+    [plugins."io.containerd.grpc.v1.cri".registry.configs]
+      [plugins."io.containerd.grpc.v1.cri".registry.configs."registry.harbor.com".tls]
+        ca_file = "/etc/containerd/registry.harbor.com/ca.crt"
+      [plugins."io.containerd.grpc.v1.cri".registry.configs."registry.harbor.com".auth]
+        username = "YOURUSERNAME"
+        password = "YOURPASSWORD"
 ---
 
 Ref : https://copyfuture.com/blogs-details/202204160404132173
