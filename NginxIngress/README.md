@@ -54,5 +54,10 @@ spec:
   rules:
 ```
 
+## Error
+- `Error from server (InternalError): error when creating "ingress.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.nginx-ingress-research.svc:443/networking/v1/ingresses?timeout=10s": service "ingress-nginx-controller-admission" not found`
+  - Fix with `kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission`
+  - Source : https://stackoverflow.com/questions/61365202/nginx-ingress-service-ingress-nginx-controller-admission-not-found
+
 ## Source :
 - https://kubernetes.github.io/ingress-nginx/
