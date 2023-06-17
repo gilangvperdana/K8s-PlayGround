@@ -44,5 +44,8 @@ helm cm-push myCharts/ chartmuseum
 # to See charts on chartmuseum
 helom repo update
 helm search repo chartmuseum
+
+# to Download chart from repository
+helm pull <chart_name> --untar --untardir <directory_path>
 ```
 
