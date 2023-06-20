@@ -59,6 +59,15 @@ docker login harbor.domain.com
 kubectl create secret generic harbor-registry-secret --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson -n YOUR_NAMESPACE
 ```
 
+- Type 2
+```
+kubectl create secret docker-registry harbor-registry-secret \
+  --docker-server=<HARBOR_URL> \
+  --docker-username=<HARBOR_ADMIN> \
+  --docker-password=<HARBOR_PASSWORD> \
+  --namespace=<NAMESPACES>
+```
+
 - Add this on your manifest
 ```
 spec :
