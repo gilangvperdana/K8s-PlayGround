@@ -78,10 +78,20 @@ load_module /etc/nginx/modules/ngx_http_geoip2_module.so;
 http {
 
   geoip2 /etc/nginx/geoip/GeoLite2-City.mmdb {
-    $geoip2_data_city_name city names en;
-    $geoip2_data_country_iso_code country iso_code;
-    $geoip2_data_country_name country names en;
-}
+      auto_reload 30m;
+      $geoip2_data_country_name country names en;
+      $geoip2_data_country_code country iso_code;
+      $geoip2_data_city_name city names en;
+      $geoip2_data_latitude location latitude;
+      $geoip2_data_longitude location longitude;
+      $geoip2_data_postal_code postal code;
+      $geoip2_data_time_zone location time_zone;
+      $geoip2_data_continent_name continent names en;
+      $geoip2_data_subdivision_1_name subdivisions 0 names en;
+      $geoip2_data_subdivision_1_iso_code subdivisions 0 iso_code;
+      $geoip2_data_metro_code location metro_code;
+      $geoip2_data_accuracy_radius location accuracy_radius;
+  }
 
   log_format upstreaminfo '$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for" "$geoip2_data_country_iso_code" "$geoip2_data_country_name" ';
 }
