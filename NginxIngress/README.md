@@ -54,6 +54,40 @@ spec:
   rules:
 ```
 
+# Enable Geo-IP
+- for collect database etc read [Here](https://gist.github.com/gilangvperdana/e49ab4a5056afd5821a112b3b85035d1)
+- values.yaml
+```
+controller:
+  config:
+    allow_snippet_annotations: true
+    compute_full_forwarded_for: true
+    enable-geoip: "true"
+    log-format-upstream: $remote_addr - $remote_user [$time_local] "$request" $status
+      $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"
+      "$http_geoip_country_code" "$http_geoip_city_name"
+```
+
+- enable geoip version 2
+```
+nano /etc/nginx/nginx.conf
+
+---
+load_module /etc/nginx/modules/ngx_http_geoip2_module.so;
+
+http {
+
+  geoip2 /etc/nginx/geoip/GeoLite2-City.mmdb {
+    $geoip2_data_city_name city names en;
+    $geoip2_data_country_iso_code country iso_code;
+    $geoip2_data_country_name country names en;
+}
+
+  log_format upstreaminfo '$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for" "$geoip2_data_country_iso_code" "$geoip2_data_country_name" ';
+}
+---
+```
+
 ## Error
 - `Error from server (InternalError): error when creating "ingress.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.nginx-ingress-research.svc:443/networking/v1/ingresses?timeout=10s": service "ingress-nginx-controller-admission" not found`
   - Fix with `kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission`
