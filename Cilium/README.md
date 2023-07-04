@@ -18,6 +18,58 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 cilium install
 ```
 
+## Verification
+- Validate
+```
+cilium status --wait
+   /¯¯\
+/¯¯\__/¯¯\    Cilium:         OK
+\__/¯¯\__/    Operator:       OK
+/¯¯\__/¯¯\    Hubble:         disabled
+\__/¯¯\__/    ClusterMesh:    disabled
+   \__/
+
+DaemonSet         cilium             Desired: 2, Ready: 2/2, Available: 2/2
+Deployment        cilium-operator    Desired: 2, Ready: 2/2, Available: 2/2
+Containers:       cilium-operator    Running: 2
+                  cilium             Running: 2
+Image versions    cilium             quay.io/cilium/cilium:v1.9.5: 2
+                  cilium-operator    quay.io/cilium/operator-generic:v1.9.5: 2
+```
+
+- Connectivity Test
+```
+cilium connectivity test
+ℹ️  Monitor aggregation detected, will skip some flow validation steps
+✨ [k8s-cluster] Creating namespace for connectivity check...
+
+---------------------------------------------------------------------------------------------------------------------
+📋 Test Report
+---------------------------------------------------------------------------------------------------------------------
+✅ 69/69 tests successful (0 warnings)
+```
+
+## Hubble (Monitoring Purposes)
+```
+cilium hubble enable
+hubble status
+cilium status
+```
+
+- Portforwarding
+```
+export HUBBLE_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/hubble/master/stable.txt)
+HUBBLE_ARCH=amd64
+if [ "$(uname -m)" = "aarch64" ]; then HUBBLE_ARCH=arm64; fi
+curl -L --fail --remote-name-all https://github.com/cilium/hubble/releases/download/$HUBBLE_VERSION/hubble-linux-${HUBBLE_ARCH}.tar.gz{,.sha256sum}
+sha256sum --check hubble-linux-${HUBBLE_ARCH}.tar.gz.sha256sum
+sudo tar xzvfC hubble-linux-${HUBBLE_ARCH}.tar.gz /usr/local/bin
+rm hubble-linux-${HUBBLE_ARCH}.tar.gz{,.sha256sum}
+
+cilium hubble port-forward&
+hubble observe
+```
+
 ### Reference
 - https://github.com/cilium/cilium
 - https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/
