@@ -44,6 +44,62 @@ Setting -> General.
 - Then try to Create a New Backup <br>
    Volume -> Select your PV -> Create a New Backup > then see on Backup tabs (if already there, backup has been succesfully to S3 bucket).
 
+### Activate RWX on Longhorn
+- Install nfs common on all nodes
+```
+sudo apt-get update
+sudo apt-get install nfs-common
+```
+
+- Create PVC & Deployment for test
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: html-volume
+          persistentVolumeClaim:
+            claimName: my-pvc
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html
+```
+
+- See on your nodes
+```
+df -hT
+
+## Find nfs mounting
+```
+
 ## Reference
 - https://longhorn.io/
 - https://github.com/longhorn/longhorn
