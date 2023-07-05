@@ -100,6 +100,9 @@ df -hT
 ## Find nfs mounting
 ```
 
+## Mount block device
+- You can see on `/dev/longhorn/` then mount it to your directory with `mount /dev/longhorn/pvc-NAMEOFPVC /root/yourfolder/`
+
 ## Reference
 - https://longhorn.io/
 - https://github.com/longhorn/longhorn
