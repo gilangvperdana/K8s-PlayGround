@@ -206,6 +206,12 @@ $ sudo systemctl restart docker
 
 SETELAH ITU INIT ULANG DI MASTER:
 $ sudo kubeadm reset && sudo kubeadm init --pod-network-cidr=10.244.XX.0/16
+
+
+## See domain cluster
+kubectl get cm coredns -n kube-system -o jsonpath="{.data.Corefile}" \
+  | grep ".local " \
+  | awk -F ' ' '{print $2}'
 ```
 
 ## Unhealthy ?
