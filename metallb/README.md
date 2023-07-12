@@ -59,6 +59,15 @@ $ kubectl create secret generic -n metallb-system memberlist --from-literal=secr
 If you deploy on top of Openstack, you can disable your `Instance Port Security` if you want to access metall-lb pool outside the cluster
 ```
 
+- 3
+```
+If after external_ip appears but still DHU from Outside, makesure external IP from metallb is appear on `ip a` if not appear please attach manually with
+
+---
+ip addr add IP_EXTERNAL/32 dev ens3
+---
+```
+
 ## Source :
 ```
 https://metallb.universe.tf/installation/
