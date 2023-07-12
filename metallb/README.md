@@ -38,6 +38,11 @@ data:
 $ kubectl apply -f confmap.yaml -n metallb-system
 ```
 
+## Check IPAdressPool
+```
+kubectl get ipaddresspools.metallb.io -n metallb-system
+```
+
 ## New Version
 - https://metallb.universe.tf/installation/
 - https://docs.okd.io/4.10/networking/metallb/metallb-configure-address-pools.html
