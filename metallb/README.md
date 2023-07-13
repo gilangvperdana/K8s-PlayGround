@@ -96,6 +96,19 @@ ip addr add IP_EXTERNAL/32 dev ens3
 ---
 ```
 
+- Change IPTables mode Kubeproxy to IPVS
+```
+kubectl edit configmap kube-proxy -n kube-system
+
+---
+mode: ipvs
+---
+
+kubectl get po -n kube-system
+kubectl delete po -n kube-system <pod-name>
+kubectl logs [kube-proxy pod] | grep "Using ipvs Proxier"
+```
+
 ## Source :
 ```
 https://metallb.universe.tf/installation/
