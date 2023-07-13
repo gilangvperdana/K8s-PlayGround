@@ -38,9 +38,37 @@ data:
 $ kubectl apply -f confmap.yaml -n metallb-system
 ```
 
+## New Version
+```
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: first-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.20.50.2-172.20.50.5
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: default
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - first-pool
+  interfaces:
+    - ens3
+```
+
 ## Check IPAdressPool
 ```
 kubectl get ipaddresspools.metallb.io -n metallb-system
+```
+
+## Check L2Advertisement
+```
+kubectl get l2advertisement.metallb.io -n metallb-system
 ```
 
 ## New Version
