@@ -70,6 +70,25 @@ cilium hubble port-forward&
 hubble observe
 ```
 
+## Change Kubeproxy to Cilium on Existing K8s Cluster
+```
+kubectl -n kube-system delete ds kube-proxy
+kubectl -n kube-system delete cm kube-proxy
+iptables-save | grep -v KUBE | iptables-restore
+
+helm repo add cilium https://helm.cilium.io/
+helm install cilium cilium/cilium --version 1.9.18 \
+    --namespace kube-system \
+    --set kubeProxyReplacement=strict \
+    --set k8sServiceHost=REPLACE_WITH_API_SERVER_IP \
+    --set k8sServicePort=REPLACE_WITH_API_SERVER_PORT
+kubectl -n kube-system get pods -l k8s-app=cilium
+
+kubectl exec -it -n kube-system cilium-fmh8d -- cilium status | grep KubeProxyReplacement
+kubectl exec -it -n kube-system cilium-fmh8d -- cilium status --verbose
+```
+- Ref : https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
+
 ### Reference
 - https://github.com/cilium/cilium
 - https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/
