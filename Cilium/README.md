@@ -52,6 +52,7 @@ cilium connectivity test
 ## Hubble (Monitoring Purposes)
 ```
 cilium hubble enable
+cilium hubble ui
 hubble status
 cilium status
 ```
