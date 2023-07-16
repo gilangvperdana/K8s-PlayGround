@@ -90,6 +90,25 @@ kubectl exec -it -n kube-system cilium-fmh8d -- cilium status --verbose
 ```
 - Ref : https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
 
+## Prometheus Metrics
+- https://grafana.com/grafana/dashboards/15513-cilium-metrics/
+- https://github.com/cilium/cilium/blob/main/examples/kubernetes/addons/prometheus/README.md
+```
+kubectl patch -n kube-system configmap cilium-config --type merge --patch '{"data":{"prometheus-serve-addr":":9962"}}'
+kubectl rollout restart deploy/cilium-operator -n kube-system
+
+## Scrape it with prometheus
+---
+  - job_name: 'cilium-cluster-exporter'
+    scrape_interval: 10s
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['K8sIP:9962']
+        labels:
+          cluster_name: yourCluster
+---
+```
+
 ### Reference
 - https://github.com/cilium/cilium
 - https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/
