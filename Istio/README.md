@@ -117,3 +117,39 @@ EOF
 Check :
 $ kubectl get peerauthentication --all-namespaces
 ```
+
+## DENY IF CONNECTION NOT FROM DEFAULT & ISTIO-SYSTEM NAMESPACE
+```
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+ name: default-deny
+ namespace: default
+spec:
+ selector:
+   matchLabels:
+     app: nginx
+     app: nginx2
+ action: DENY
+ rules:
+ - from:
+   - source:
+       notNamespaces: ["default", "istio-system"]
+```
+
+## DISABLE SPESIFIC PORT WHEN USE STRICT AUTH
+```
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: "example-workload-policy"
+  namespace: "default2"
+spec:
+  selector:
+     matchLabels:
+       app: nginx3
+  portLevelMtls:
+    5201:
+      mode: DISABLE
+```
+

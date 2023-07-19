@@ -64,7 +64,7 @@ EOF
 ---
 ```
 
-### Traffic Splitting
+### Traffic Splitting with Spesific Port
 ```
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
