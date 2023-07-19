@@ -103,9 +103,13 @@ spec:
   - route:
     - destination:
         host: nginx-service
+        port:
+          number: 80
       weight: 80
     - destination:
         host: nginx2-service
+        port:
+          number: 80
       weight: 20
 ```
 
