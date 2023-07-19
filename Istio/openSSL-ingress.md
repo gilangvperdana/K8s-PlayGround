@@ -64,6 +64,51 @@ EOF
 ---
 ```
 
+### Traffic Splitting
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: nginx-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: tls-secret
+    hosts:
+    - "example.com"
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "example.com"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: nginx-splitting
+spec:
+  hosts:
+  - "example.com"
+  gateways:
+  - nginx-gateway
+  http:
+  - route:
+    - destination:
+        host: nginx-service
+      weight: 80
+    - destination:
+        host: nginx2-service
+      weight: 20
+```
+
 ```
 Testing :
 $ curl -k https://example.com
