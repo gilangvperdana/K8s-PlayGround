@@ -1,6 +1,12 @@
 ## NFS Subdir External Provisioner
 Make PV with NFS Solution on Kubernetes
 
+## Make sure
+- Make sure if you run on K8s baremetal please install kernel nfs first
+```
+sudo apt install nfs-kernel-server
+```
+
 ## Execution
 ```
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
