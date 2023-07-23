@@ -109,6 +109,14 @@ kubectl rollout restart deploy/cilium-operator -n kube-system
 ---
 ```
 
+## Error on Ubuntu 22.04LTS with Cilium (COREDNS)
+```
+sed -i -e '/net.ipv4.conf.*.rp_filter/d' $(grep -ril '\.rp_filter' /etc/sysctl.d/ /usr/lib/sysctl.d/)
+sysctl -a | grep '\.rp_filter' | awk '{print $1" = 0"}' > /etc/sysctl.d/1000-cilium.conf
+sysctl --system
+sysctl -a | grep '\.rp_filter'
+```
+
 ### Reference
 - https://github.com/cilium/cilium
 - https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/
