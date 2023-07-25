@@ -14,3 +14,6 @@ mkdir -p ~/.local/bin
 mv ./kubectl ~/.local/bin/kubectl
 kubectl version --client
 ```
+
+## Windows Version
+- https://gist.github.com/gilangvperdana/875a267286cb3bef503383add223e67e
