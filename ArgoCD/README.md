@@ -26,6 +26,11 @@ $ chmod +x argocd
 $ sudo mv argocd /usr/local/bin/
 ```
 
+## Change to Loadbalancer Service
+```
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+```
+
 ## Apply Notification to Slack or Teams
 ```
 ## Change this line to our environment
@@ -54,4 +59,5 @@ kubectl apply -f cm-argonotif.yaml -n argocd
 https://argo-cd.readthedocs.io/en/stable/
 https://github.com/argoproj/argo-cd
 https://tanzu.vmware.com/developer/guides/argocd-gs
+https://argo-cd.readthedocs.io/en/stable/getting_started/
 ```
