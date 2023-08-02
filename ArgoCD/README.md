@@ -54,6 +54,13 @@ nano cm-argonotif.yaml
 kubectl apply -f cm-argonotif.yaml -n argocd
 ```
 
+## ArgoCD CLI with JWT Token
+```
+https://yetiops.net/posts/argocd-jenkins-pipeline/
+argocd login argocd.server.com:443 --skip-test-tls --grpc-web
+argocd proj role create-token default jenkins-deploy-role
+```
+
 ## Source
 ```
 https://argo-cd.readthedocs.io/en/stable/
