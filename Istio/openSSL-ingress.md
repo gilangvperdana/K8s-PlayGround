@@ -121,3 +121,9 @@ OR
 
 $ curl --cacert my-ca.crt https://example.com
 ```
+
+## Get Gateway & Virtual Service Rule
+```
+kubectl get gateway
+kubectl get virtualservice
+```
