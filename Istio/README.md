@@ -84,6 +84,32 @@ Monitoring on Kiali Dashboard :
 http://ip_external_kiali:20001
 ```
 
+## KIALI WITH TOKEN AUTH STRATEGY
+```
+nano kiali.yaml
+
+---
+data:
+  config.yaml: |
+    auth:
+      openid: {}
+      openshift:
+        client_id_prefix: kiali
+      strategy: token
+---
+
+
+---
+    login_token:
+      signing_key: CHANGEME00000000
+---
+```
+
+- Create Token from `kiali` Service Account for Login
+```
+kubectl -n istio-system create token kiali
+```
+
 ## Strict your Pod Connection
 
 ```
