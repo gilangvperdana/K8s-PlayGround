@@ -66,5 +66,6 @@ argocd proj role create-token default jenkins-deploy-role
 https://argo-cd.readthedocs.io/en/stable/
 https://github.com/argoproj/argo-cd
 https://tanzu.vmware.com/developer/guides/argocd-gs
+https://yetiops.net/posts/argocd-jenkins-pipeline/
 https://argo-cd.readthedocs.io/en/stable/getting_started/
 ```
