@@ -212,6 +212,11 @@ $ sudo kubeadm reset && sudo kubeadm init --pod-network-cidr=10.244.XX.0/16
 kubectl get cm coredns -n kube-system -o jsonpath="{.data.Corefile}" \
   | grep ".local " \
   | awk -F ' ' '{print $2}'
+
+## CREATE API TOKEN
+kubectl create serviceaccount test-user
+kubectl create clusterrolebinding test-user-binding --clusterrole=cluster-admin --serviceaccount=default:test-user
+kubectl create token test-user
 ```
 
 ## Unhealthy ?
