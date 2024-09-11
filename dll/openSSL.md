@@ -10,6 +10,9 @@ $ kubectl create secret tls example-com-tls --cert=tls.crt --key=tls.key
 Add line on ingress.yaml:
 spec:
 --------------------------------------
+metadata:  
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
   tls:
     - secretName: posts-com-tls
       hosts:
