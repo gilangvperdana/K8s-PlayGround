@@ -229,3 +229,19 @@ $ sudo nano /etc/kubernetes/manifests/kube-scheduler.yaml
 $ sudo nano /etc/kubernetes/manifests/kube-controller-manager.yaml
 $ sudo systemctl restart kubelet.service
 ```
+
+
+## Node1 not found after restart node
+```
+Run the following command to check if certs are expired:
+kubeadm certs check-expiration
+
+If they are expired, renew them
+kubeadm certs renew all
+
+Also remember to run the following commands:
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+systemctl kubelet restart
+```
+- Reference : https://discuss.kubernetes.io/t/after-server-reboot-error-getting-node-err-node-not-found/21290
