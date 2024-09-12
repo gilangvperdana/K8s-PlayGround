@@ -15,6 +15,7 @@ this repository will always be updated.
 | **Installation with Kubeadm** | [**Here**](https://blog.radwell.codes/2022/07/single-node-kubernetes-cluster-via-kubeadm-on-ubuntu-22-04/) | **Deploy K8s with Kubeadm** |
 | **Installation with Kubeadm II** | [**Here**](https://computingforgeeks.com/deploy-kubernetes-cluster-on-ubuntu-with-kubeadm/) | **Deploy K8s with Kubeadm II** |
 | Kubeadm 2 Nodes All Role | [Here](https://gist.github.com/gilangvperdana/645915a298704117042133ca26e0cbdd) | Provisioning 2 Node All Role of Kubernetes Cluter with Kubeadm |
+| Kubedashboard | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Kubedashboard) | Kubernetes Dashboard |
 | Add FQDN on KubeAPI | [Here](https://blog.scottlowe.org/2019/07/30/adding-a-name-to-kubernetes-api-server-certificate/) | Kubeadm Add FQDN on Existing Cluster |
 | Cilium | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Cilum) | eBPF-based Networking, Observability, Security |
 | Vault | [Here](https://github.com/gilangvperdana/K8s-PlayGround/tree/master/Vault) | Manage Secrets & Protect Sensitive Data with Vault |
