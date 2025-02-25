@@ -42,6 +42,12 @@ kubectl describe vms testvm -n vm
 kubectl describe vmi testvm -n vm
 ```
 
+## Remote VM
+```
+virtctl console testvm
+virtctl ssh testvm
+```
+
 ## Remove Kubevirt
 ```
 export RELEASE=$(curl https://storage.googleapis.com/kubevirt-prow/release/kubevirt/kubevirt/stable.txt)
