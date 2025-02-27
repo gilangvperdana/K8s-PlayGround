@@ -45,3 +45,10 @@ spec:
                   ubuntu:ubuntu
                   root:toor
                 expire: False
+              write_files:
+                - path: /etc/ssh/sshd_config.d/00-cloud-init.conf
+                  content: |
+                    PermitRootLogin yes
+                    PasswordAuthentication yes
+              runcmd:
+                - systemctl restart ssh
