@@ -48,6 +48,60 @@ virtctl console testvm
 virtctl ssh testvm
 ```
 
+## Add Multus
+```
+kubectl apply -f https://github.com/k8snetworkplumbingwg/multus-cni/releases/latest/download/multus-daemonset.yml
+```
+
+- for Cilium
+```
+kubectl edit configmap cilium-config -n kube-system
+
+---
+cni-exclusive: 'false'
+---
+
+kubectl rollout restart daemonset cilium -n kube-system
+kubectl delete pod kube-multus-*
+```
+
+```
+kubectl get network-attachment-definitions.k8s.cni.cncf.io
+
+---
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  name: br0-net
+spec:
+  config: '{
+    "cniVersion": "0.4.0",
+    "name": "br0-net",
+    "plugins": [
+      {
+        "type": "bridge",
+        "bridge": "br0",
+        "ipam": {
+          "type": "host-local",
+          "subnet": "192.168.204.0/24",
+          "rangeStart": "192.168.204.100",
+          "rangeEnd": "192.168.204.200",
+          "routes": [{ "dst": "0.0.0.0/0", "gw": "192.168.204.1" }]
+        }
+      }
+    ]
+  }'
+---
+```
+
+```
+sudo ip link add name br0 type bridge
+sudo ip link set ens7 master br0
+sudo ip link set br0 up
+sudo ip link set ens7 up
+brctl show
+```
+
 ## Remove Kubevirt
 ```
 export RELEASE=$(curl https://storage.googleapis.com/kubevirt-prow/release/kubevirt/kubevirt/stable.txt)
